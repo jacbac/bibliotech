@@ -4,7 +4,25 @@ date: 2013-12-21 14:00
 authors: JacBac
 categories: ide, sublime
 tags: ide, plug-ins, install
-banner: /posts_uploads/2013/11/acm.jpg
+banner: /posts_uploads/2013/11/nick-nolte.jpg
+
+"sources": [
+  {
+    "label": "Sublime-Text Official",
+    "href": "http://www.sublimetext.com/",
+    "lang": "EN"
+  },
+  {
+    "label": "Package Control",
+    "href": "https://sublime.wbond.net/installation",
+    "lang": "EN"
+  },
+  {
+    "label": "Sublime-Text package repository",
+    "href": "https://sublime.wbond.net/",
+    "lang": "EN"
+  },
+]
 
 layout: posts
 
@@ -139,6 +157,8 @@ Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and
 Search for "LESS" and click enter.
 
 #### Basic usage
+
+WIP
 
 ### Syntax highlighting
 
