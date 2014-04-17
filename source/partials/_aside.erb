@@ -1,0 +1,33 @@
+<h4>Catégories</h4>
+<ul>
+  <% blog.categories.keys.sort_by(&:downcase).each do |category| %>
+    <% articles = blog.categories[category] %>
+    <li><%= link_to category, category_path(category) %> <span class="badge"><%= articles.size %></span></li>
+  <% end %>
+</ul>
+<h4>Mots-clefs</h4>
+<ul>
+  <% blog.tags.each do |tag, articles| %>
+    <li><%= link_to tag, tag_path(tag) %> <span class="badge"><%= articles.size %></span></li>
+  <% end %>
+</ul>
+<h4>Auteurs</h4>
+<ul>
+  <% blog.authors.keys.sort_by(&:downcase).each do |author| %>
+    <% articles = blog.authors[author] %>
+    <li><%= link_to author, author_path(author) %> <span class="badge"><%= articles.size %></span></li>
+  <% end %>
+</ul>
+<h4>Année</h4>
+<ul>
+  <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+    <li><%= link_to year, blog_year_path(year) %> <span class="badge"><%= articles.size %></span></li>
+  <% end %>
+</ul>
+
+<h4>Todo</h4>
+<ul>
+  <li>CSS container en responsive</li>
+  <li><a href="http://designbyjoel.com/blog/2012-11-23-middleman-search/">Améliorer la fonction recherche + CSS résultats (ul)</a></li>
+  <li><a href="http://g-ernaelsten.developpez.com/tutoriels/rhtml/">Le HTML sous ruby</a>
+</ul>

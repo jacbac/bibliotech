@@ -1,0 +1,40 @@
+<div class="metas">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Tags</h4>
+        <ul>
+          <% blog.tags.each do |tag, articles| %>
+            <li><%= link_to tag, tag_path(tag) %> <span class="badge badge-primary"><%= articles.size %></span></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Catégories</h4>
+        <ul>
+          <% blog.categories.keys.sort_by(&:downcase).each do |category| %>
+            <% articles = blog.categories[category] %>
+            <li><a href="<%= category_path(category) %>"><%= category %> <span class="badge"><%= articles.size %></span></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Auteurs</h4>
+        <ul>
+          <% blog.authors.keys.sort_by(&:downcase).each do |author| %>
+            <% articles = blog.authors[author] %>
+            <li><a href="<%= author_path(author) %>"><%= author %> <span class="badge"><%= articles.size %></span></a></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Année</h4>
+        <ul>
+          <% blog.articles.group_by {|a| a.date.year }.each do |year, articles| %>
+            <li><%= link_to year, blog_year_path(year) %> <span class="badge"><%= articles.size %></span></a></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

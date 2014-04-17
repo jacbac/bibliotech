@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <meta name="description" content="<%= page_description %>">
+    <meta name="keywords" content="<%= page_keywords %>">
+
+    <title><%= page_title %></title>
+
+    <link href="//fonts.googleapis.com/css?family=Source+Sans Pro:400,200italic,200,300,400italic,600italic,600,700" rel="stylesheet" type="text/css">
+    <%= stylesheet_link_tag "normalize", "monokai", "bootstrap.min", "main" %>
+  </head>
+  <body data-spy="scroll" data-target="#table-content">
+    <%= partial "partials/header" %>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 post-banner">
+          <div class="search-results"></div>
+        </div>
+      </div>
+      <div role="main-intro">
+        <div class="row">
+          <div class="col-md-4 post-banner">
+            <% if current_page.data.banner %>
+              <%= image_tag current_page.data.banner, :alt => current_page.title, :height => '202' %>
+            <% end %>
+          </div>
+          <div class="col-md-8 post-title">
+            <h1 class="entry-title"><%= current_page.title %></h1>
+            <div class="row text-muted metas article-metas">
+              <div class="col-md-12">
+                <span class="authors">&Eacute;crit par <%= (current_page.authors.sort_by(&:downcase).map {|author| "<a href=\"#{author_path(author)}\">#{author}</a>"}).join(', ') %></span>
+                <span class="date-published">Publié le <time class="published" datetime="<%= current_page.date.xmlschema %>"><%= current_page.date.strftime('%e %B %Y') %></time></span>
+                <% if current_page.categories.size > 0 %>
+                <span class="categories">Catégories :  
+                <%= (current_page.categories.sort_by(&:downcase).map {|category| "<a href=\"#{category_path(category)}\">#{category}</a>"}).join(', ') %></span>
+                <% end %>
+                <% if current_page.tags.size > 0 %>
+                <span class="tags">Mots-clefs :  
+                <%= (current_page.tags.sort_by(&:downcase).map {|tag| "<a href=\"#{tag_path(tag)}\">#{tag}</a>"}).join(', ') %></span>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <aside id="table-content" class="nav post-aside affix" data-spy="affix" role="complementary">
+            <h4>Index</h4>
+            <%= table_of_contents(current_page) %>
+            <%= partial "partials/post-sources" %>
+        </aside>  
+        </div>    
+        <div class="col-md-8 post" role="main">
+          <article class="entry">
+            <div class="entry-content">
+              <%= yield %>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="affix-footer">
+      <%= partial "partials/post-footer" %>
+      <%= partial "partials/footer" %>
+    </div>
+
+    <%= javascript_include_tag  "jquery-2.0.3.min", "bootstrap", "main" %>
+  </body>
+</html>
