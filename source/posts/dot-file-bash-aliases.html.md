@@ -130,7 +130,6 @@ alias sshlist=". ~/localBin/sshlist.sh"
 alias mybackup="cd /opt/backup/manual/ && php backup.php && cd -"
 alias jsstyle="seed ~/Bin/js/jslint.js"
 alias apache2routes='. ~/Bin/sh/apache2routes.sh'
-alias googleBackup='/opt/backup/googledocs/gdatacopier-2.1.2/gcp.py -o -u rguilloux@toog.fr:/all ~/Documents/GoogleDocs/'
 alias whereisraspberrypi="sudo nmap -sV --open 192.168.0.0/25 -p22" 
 alias allIps='for ip in $(seq 1 254); do ping -c 1 192.168.1.$ip>/dev/null; [ $? -eq 0 ] && echo "192.168.1.$ip UP" || : ; done'
 # Add an "alert" alias for long running commands.  Use like so:

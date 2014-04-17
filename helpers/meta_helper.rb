@@ -19,7 +19,7 @@ def page_description
 end
 
 def page_keywords
-  keywords = [, "bibliotech", "doc", "documentation"] # Set site keywords here
+  keywords = ["bibliotech", "doc", "documentation"] # Set site keywords here
 
   if data.page.keywords
     keywords.concat(data.page.keywords)

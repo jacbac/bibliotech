@@ -2,7 +2,7 @@
 title: Propel v1.3 enhanced
 date: 2013-12-02 11:30
 authors: JacBac
-categories: easytoog, propel
+categories: propel
 tags: propel 1.3, sql, orm
 banner: /posts_uploads/2013/11/nick-nolte.jpg
 

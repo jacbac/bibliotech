@@ -18,12 +18,15 @@ La procédure de déploiement et de mise à jour sur remote server n'est donc pa
 ### Pré-requis
 
 * Ruby 1.8.x : KO
-* Ruby 1.9.3 : OK
-* Ruby 2.x   : non testé
-* la version ruby1.9.1dev (header files for compiling extension modules...)
+* Ruby 1.9.3 : OK (avec ruby1.9.1dev installé)
+* Ruby 2.1.1 : OK
 * gem bundler
 
-```shell
+Il peut arriver que vous ayez un conflit si ruby1.8 est déjà installé sur votre machine. Vous pouvez essayer de régler le conflit qui surviendra, ou alors vous pouvez faire "simple" :) et supprimer votre installation de ruby1.8 (puis la réinstaller en passant par des gestionnaires de version ruby plus souple comme Rbenv).
+
+Installation dépréciée après des tests OK sur ruby 2.1.1 :
+
+```
 sudo apt-get install ruby1.9.1 ruby1.9.1-dev
 (package ruby1.9.1 mal nommé => télécharge la dernière version en 1.9.3)
 
@@ -31,11 +34,50 @@ ruby -v
 => ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux] (ou équivalent)
 ```
 
-Il peut arriver que vous ayez un conflit si ruby1.8 est déjà installé sur votre machine. Vous pouvez essayer de régler le conflit qui surviendra, ou alors vous pouvez faire "simple" :) et supprimer votre installation de ruby1.8 (en sachant bien sûr que vous perdrez peut-être d'autres logiciels).
+La nouvelle méthode avec Rbenv est maintenant à préférer :
+
+#### With Rbenv
+
+[Rbenv official](https://github.com/sstephenson/rbenv)
+
+If ZSH is already installed, change the following end of lines with `~/.bashrc` by `~/.zshrc`.
+
+```
+sudo apt-get install -y libssl-dev zlib1g-dev libreadline-dev
+
+git clone git://github.com/sstephenson/rbenv.git .rbenv
+echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(rbenv init -)"' >> ~/.bashrc
+exec $SHELL
+
+git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
+exec $SHELL
+```
+
+Then you can list, search, get the ruby version you want and define a specific version as global
+
+```
+rbenv install --list
+
+rbenv install 2.1.1
+rbenv global 2.1.1
+ruby -v
+
+rbenv rehash
+```
+
+The last step is to tell Rubygems not to install the documentation for each package locally
+
+```
+echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+```
+
+#### Le projet
 
 Puis on installe les dépendances du projet bibliotech
 
-```shell
+```
 cd workspace/bibliotech
 [sudo] gem update
 [sudo] gem install bundler
@@ -44,11 +86,11 @@ bundle install
 
 Une fois que les différents composants ont été rapatriés, on lance une session locale :
 
-```shell
+```
 bundle exec middleman
 ```
 
-Le projet est maintenant accessible via l'adresse indiquée dans le shell !
+Le projet est maintenant accessible via l'adresse indiquée dans le terminal !
 
 ## TODO
 

@@ -52,6 +52,20 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
 Search for "SideBarEnhancements" and click enter.
 
+### Alignment
+
+[Alignment](https://sublime.wbond.net/packages/Alignment)
+
+Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Search for "Alignment" and click enter.
+
+### Color Highlighter
+
+[Color Highlighter](https://sublime.wbond.net/packages/Color%20Highlighter)
+
+Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Search for "Color Highlighter" and click enter.
+
 ## QA Tools
 
 ### Doc​Blockr
@@ -115,13 +129,6 @@ Requires `NodeJS` to work.
 Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
 Search for "JSLint" and click enter.
 
-#### Alignment
-
-[Alignment](https://sublime.wbond.net/packages/Alignment)
-
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
-Search for "Alignment" and click enter.
-
 #### Basic usage
 
 Make a multi-line selection, or multiple selections
@@ -179,11 +186,3 @@ Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and
 Search for "LESS" and click enter.
 
 ### Theme
-
-
-
-### Need portage in Sublime-Text 3 (OK ST-2)
-
-[ColorHighlighter](https://sublime.wbond.net/packages/Color%20Highlighter)
-
-

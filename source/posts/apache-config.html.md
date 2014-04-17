@@ -1,16 +1,31 @@
 ---
-title: LogLevel Apache
+title: Apache config
 date: 2013-11-25 13:52
 authors: JacBac
 categories: apache
-tags: debug, apache, serveur
+tags: log, debug, apache, server
 banner: /posts_uploads/2013/11/acm.jpg
 
 layout: posts
 
 ---
 
+## Logs path
 
+To find exact apache log file location, you can use grep command:
+
+```
+/usr/sbin/apachectl -V
+
+and
+
+grep ErrorLog /usr/local/etc/apache22/httpd.conf
+grep ErrorLog /etc/apache2/apache2.conf
+grep ErrorLog /etc/httpd/conf/httpd.conf
+```
+
+
+## Log level
 
 ```shell
 sudo vim /etc/apache2/apache2.conf
