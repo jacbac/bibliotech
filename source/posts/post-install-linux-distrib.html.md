@@ -1,5 +1,5 @@
 ---
-title: Post-install Debian Distrib
+title: Post-install Linux Distrib
 date: 2013-11-25 13:52
 authors: JacBac
 categories: linux
@@ -21,7 +21,7 @@ Tested OK on
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-## Build
+## Essentials tools
 
 ```
 sudo apt-get install build-essential make
