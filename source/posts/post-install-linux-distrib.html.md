@@ -62,6 +62,16 @@ curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | 
 zsh --version
 ```
 
+### Set the Agnoster theme for Omzsh
+
+[Agnoster install](https://gist.github.com/agnoster/3712874)
+
+First test if you support the extended Power Vim font
+
+```
+echo "⮀ ± ⭠ ➦ ✔ ✘ ⚡"
+```
+
 ### Update PPAs
 
 * Sublime-Text 3 Beta
@@ -221,6 +231,7 @@ If ZSH is already installed, change the following end of lines with `~/.bashrc` 
 ```
 sudo apt-get install -y libssl-dev zlib1g-dev libreadline-dev
 
+cd ~/
 git clone git://github.com/sstephenson/rbenv.git .rbenv
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(rbenv init -)"' >> ~/.bashrc
