@@ -13,7 +13,7 @@ layout: posts
 Tested OK on
 
 * Ubuntu 13.10 with Gnome 3
-* Debian 7.2 Wheezy with Gnome 3
+* Debian 7.2 Wheezy with Gnome 3 (somes install differ, so google it if it don't work)
 
 ## Let's start !
 
@@ -21,7 +21,7 @@ Tested OK on
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-## Essentials tools
+## Essentials build tools
 
 ```
 sudo apt-get install build-essential make
@@ -60,33 +60,94 @@ curl --version
 sudo apt-get install zsh
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 zsh --version
+chsh -s /bin/zsh
 ```
 
-### Set the Agnoster theme for Omzsh
+### Set the Agnoster theme for Oh My ZSH
 
+[OMZSH Theme](https://github.com/robbyrussell/oh-my-zsh/wiki/Themes)
 [Agnoster install](https://gist.github.com/agnoster/3712874)
 
-First test if you support the extended Power Vim font
+First, do the [test for special characters](https://gist.github.com/agnoster/3712874) to let you know if you support the extended Power Vim font.
 
 ```
 echo "⮀ ± ⭠ ➦ ✔ ✘ ⚡"
 ```
 
-### Update PPAs
+If not, download the font and the fontconfig and do the [fontconfig instructions](https://powerline.readthedocs.org/en/latest/installation/linux.html#fontconfig) (download links are in the last link).
 
-* Sublime-Text 3 Beta
-* Mozilla Firefox
-* Mozilla Thunderbird
+Then enable the Agnoster theme in OMZSH
 
 ```
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 && sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa
+vim ~/.zshrc
+ZSH_THEME="agnoster"
+```
+
+optionally set `DEFAULT_USER` in `~/.zshrc` to your regular username to hide the `“user@hostname”`` info when you’re logged in as yourself on your local machine.
+
+### Set the common-aliases plugin for Oh My ZSH
+
+[Common-aliases OMZSH plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#common-aliases)
+
+Collection of useful common aliases (about `cd`, `list`, etc.), not enabled by default since they may change some user defined aliases.
+
+```
+vim ~/.zshrc
+plugins=(git common-aliases)
+```
+
+### Set the dircycle plugin for Oh My ZSH
+
+[Dircycle OMZSH plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#dircycle)
+
+Navigate trough directory with `Ctrl + Shift + Left/Right`
+
+```
+vim ~/.zshrc
+plugins=(git common-aliases dircycle)
+```
+
+### Set the Symfony 2 plugin for Oh My ZSH
+
+[Symfony 2 OMZSH plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#symfony2)
+
+Give you autocompletion for symfony 2 console `app/console`.
+Some alias
+
+```
+vim ~/.zshrc
+plugins=(git common-aliases dircycle symfony2)
+```
+
+### Set the Sublime-Text plugin for Oh My ZSH
+
+[Sublime-Text OMZSH plugin](https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins#sublime)
+
+Open a file in sublime-text with `st <file>` or a directory with `stt <dir>`
+
+```
+vim ~/.zshrc
+plugins=(git common-aliases dircycle symfony2 sublime)
+```
+
+## Add some PPA & Mozilla's
+
+Sublime-Text 3 Beta
+
+```
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo apt-get update
 sudo apt-get install sublime-text-installer
 ```
 
+```
+sudo apt-get install firefox
+sudo apt-get install thunderbird
+```
+
 ## LAMP env
 
-[https://wiki.debian.org/lamp](https://wiki.debian.org/lamp)
+[Wiki Debian LAMP](https://wiki.debian.org/lamp)
 
 ### MySQL
 
@@ -110,6 +171,7 @@ sudo a2enmod headers
 sudo a2enmod expires
 sudo a2enmod deflate
 sudo a2enmod setenvif
+sudo a2enmod macro
 
 sudo service apache2 restart
 ```
@@ -292,7 +354,7 @@ sudo vim /etc/hosts
 127.0.0.1   rockmongo
 
 cd /etc/apache2/sites-available/
-sudo vim tool_rockmongo
+sudo vim tool_rockmongo.conf
 ```
 
 add (adapt path before making a dummy copy)
@@ -318,7 +380,7 @@ add (adapt path before making a dummy copy)
 then 
 
 ```
-sudo a2ensite tool_rockmongo
+sudo a2ensite tool_rockmongo.conf
 sudo service apache2 reload
 ```
 
@@ -376,6 +438,8 @@ Create a new vagrant folder
 mkdir vagrant && cd vagrant && mkdir ubuntu_lamp && ubuntu_node
 ```
 
+WIP
+
 ### VirtualBox
 
 [VirtualBox official](https://www.virtualbox.org/wiki/Linux_Downloads)
@@ -413,9 +477,8 @@ sudo apt-get install filezilla filezilla-common
 ### Create workspace folder
 
 ```
-cd /home/{USER_NAME}/
+cd ~/
 mkdir workspace
-
 ```
 
 ### Grant access
@@ -430,11 +493,11 @@ apt-get install sudo
 sudo apt-get install most
 ```
 
-then add to `.bashrc` file
+then add to `.bashrc` or `.zshrc` file
 
 ```
-# colorized man, needs to install most
-export PAGER=most
+echo "# colorized man, needs to install most" > ~/.zshrc
+echo "export PAGER=most"  > ~/.zshrc
 ```
 
 ### Adding current user to www-data group
@@ -518,10 +581,11 @@ apc.enable_cli = 1
 
 ## Others TODO
 
+* APC fine config
 * Redmine
 * SonarQube
 * php-console
-* basics VHost & apache2 variable vhost config
+* basics VHost & apache2 macro-based vhost config
 * git config
 * dot-files
 * dev personnal directorys
