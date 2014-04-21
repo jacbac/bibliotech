@@ -49,21 +49,21 @@ import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.
 
 [Sidebar Enhancements](https://sublime.wbond.net/packages/SideBarEnhancements)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "SideBarEnhancements" and click enter.
 
 ### Alignment
 
 [Alignment](https://sublime.wbond.net/packages/Alignment)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "Alignment" and click enter.
 
 ### Color Highlighter
 
 [Color Highlighter](https://sublime.wbond.net/packages/Color%20Highlighter)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "Color Highlighter" and click enter.
 
 ## QA Tools
@@ -72,7 +72,7 @@ Search for "Color Highlighter" and click enter.
 
 [Doc​Blockr](https://sublime.wbond.net/packages/Doc​Blockr)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "Doc​Blockr" and click enter.
 
 #### Basic usage
@@ -90,7 +90,7 @@ The PHP Coding Standards Fixer tool fixes most issues in your code when you want
 
 #### Basic usage
 
-Auto-correct files on save (`Ctrl+S`), according to basic or user rules.
+Auto-correct files on save (<kbd>Ctrl</kbd> <kbd>S</kbd>), according to basic or user rules.
 
 
 
@@ -98,7 +98,7 @@ Auto-correct files on save (`Ctrl+S`), according to basic or user rules.
 
 []()
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "SublimeLinter" and click enter.
 
 #### CSSLint
@@ -109,12 +109,12 @@ Requires `NodeJS` and `csslint` node package to work
 
     npm install -g csslint
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "CSSLint" and click enter.
 
 #### Basic usage
 
-Search for `CSSLint: Run CSSLint` from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X or use a keyboard shortcut (by default this is `Ctrl+Alt+C`).
+Search for `CSSLint: Run CSSLint` from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X or use a keyboard shortcut (by default this is `Ctrl+Alt+C`).
 
 Change this by adding something like the following to your key bindings:
 
@@ -126,13 +126,13 @@ Requires `NodeJS` to work.
 
 [JSLint](https://sublime.wbond.net/packages/JSLint)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "JSLint" and click enter.
 
 #### Basic usage
 
 Make a multi-line selection, or multiple selections
-Press `Ctrl+Alt+A` on Windows and Linux, or `Cmd+Ctrl+A` on OS X
+Press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>A</kbd> on Windows and Linux, or `Cmd+Ctrl+A` on OS X
 
 #### Less2Css
 
@@ -140,7 +140,7 @@ Requires `lessc` installed on `PATH`.
 
 [Less2Css](https://sublime.wbond.net/packages/Less2Css)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "Less2Css" and click enter.
 
 ### Git
@@ -149,7 +149,7 @@ Search for "Less2Css" and click enter.
 
 [GitGutter](https://sublime.wbond.net/packages/GitGutter)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "GitGutter" and click enter.
 
 ### Markdown
@@ -160,7 +160,7 @@ Search for "GitGutter" and click enter.
 
 Provides markdown preview in browser.
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "LESS" and click enter.
 
 #### Basic usage
@@ -173,7 +173,7 @@ WIP
 
 [Monokai-Extended](https://github.com/jisaacks/sublime-monokai-extended)
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "Monokai Extended" and click enter.
 
 #### LESS
@@ -182,7 +182,7 @@ Search for "Monokai Extended" and click enter.
 
 Provides syntax highlighting for .less files, along with snippets and completions.
 
-Select "Install Package" from the Command Palette: `Ctrl+Shift+P` on Windows and Linux or `⇧⌘P` on OS X
+Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for "LESS" and click enter.
 
 ### Theme

@@ -48,7 +48,7 @@ git config --global user.email "{YOUR_@_MAIL.com}"
 ### Curl
 
 ```
-sudo apt-get install curl php5-curl
+sudo apt-get install curl
 curl --version
 ```
 
@@ -160,7 +160,7 @@ a new root password is ask. Set a strong password for root
 ### Apache 2
 
 ```
-sudo apt-get install apache2 apache2-doc
+sudo apt-get install apache2
 ```
 
 ### Apache2 mods
@@ -178,20 +178,20 @@ sudo service apache2 restart
 
 ### PHP 5
 
+Will install also
+* php5-mysql
+* php5-mcrypt
+* php5-curl
+* php-apc
+
 ```
-sudo apt-get install php5 php5-mysql libapache2-mod-php5
+sudo apt-get install php5 libapache2-mod-php5 php5-mysql php5-mcrypt php5-curl
 ```
 
 ### PHPMyAdmin
 
 ```
 sudo apt-get install phpmyadmin
-```
-
-### APC
-
-```
-sudo apt-get install php-apc
 ```
 
 ### Composer
