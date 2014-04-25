@@ -3,46 +3,43 @@ Bibliotech
 
 A static site for non-static documentation !
 
+## Disclaimer :
+
+This is a attempt to try a "markdown blogging" system (Middleman) which derivated in building a "partial" documentation repository for myself and/or a small team
+
+In some way it's a fork of Middleman. In a minor way
+
+The .md files located in `source/posts/` are at this point simple compilations of facts I found on internet. Just take a look or forget about it, it's not the point here.
+
+`Always listen the Log Lady !`
+
+
 ## Usage
+
+Use it as a blogging system
 
 Affichage sous format blog (et archivage) de tutoriaux, astuces, bonnes pratiques et autres ressources à propos des développements informatiques.
 
-## Installation
+## Install
 
-L'installation a été testé OK le 16 avril 2014 sur un poste local avec Ubuntu 13.10 installé.
+Installation process complete on 2014-04-16, Ubuntu 13.10 and Debian 7.2, localhost.
 
-Aucun déploiement en conditions réelles n'a encoré été testé. Les sessions lancées de `bibliotech` ne l'ont été qu'en local avec `bundle exec`.
+I have NOT deployed this project in a true prod environment (remote server), so try at your risk...
 
-La procédure de déploiement et de mise à jour sur remote server n'est donc pas encore documentée.
+### Required
 
-### Pré-requis
-
-* Ruby 1.8.x : KO
-* Ruby 1.9.3 : OK (avec ruby1.9.1dev installé)
-* Ruby 2.1.1 : OK
+* a Ruby version >= 1.9.3 (1.9.3 with ruby1.9.1dev package)
+* gem
 * gem bundler
 
-Il peut arriver que vous ayez un conflit si ruby1.8 est déjà installé sur votre machine. Vous pouvez essayer de régler le conflit qui surviendra, ou alors vous pouvez faire "simple" :) et supprimer votre installation de ruby1.8 (puis la réinstaller en passant par des gestionnaires de version ruby plus souple comme Rbenv).
 
-Installation dépréciée après des tests OK sur ruby 2.1.1 :
-
-```
-sudo apt-get install ruby1.9.1 ruby1.9.1-dev
-(package ruby1.9.1 mal nommé => télécharge la dernière version en 1.9.3)
-
-ruby -v
-=> ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux] (ou équivalent)
-```
-
-La nouvelle méthode avec Rbenv est maintenant à préférer :
-
-#### With Rbenv
+#### Get Ruby With Rbenv
 
 [Rbenv official](https://github.com/sstephenson/rbenv)
 
-If ZSH is already installed, change the following end of lines with `~/.bashrc` by `~/.zshrc`.
+(If ZSH is already installed, change the following end of lines with `~/.bashrc` by `~/.zshrc`)
 
-```
+```shell
 sudo apt-get install -y libssl-dev zlib1g-dev libreadline-dev
 
 git clone git://github.com/sstephenson/rbenv.git .rbenv
@@ -55,9 +52,9 @@ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bashrc
 exec $SHELL
 ```
 
-Then you can list, search, get the ruby version you want and define a specific version as global
+Then you can list, search, get the ruby version you want and define a specific ruby version as a global version
 
-```
+```shell
 rbenv install --list
 
 rbenv install 2.1.1
@@ -69,84 +66,95 @@ rbenv rehash
 
 The last step is to tell Rubygems not to install the documentation for each package locally
 
-```
+```shell
 echo "gem: --no-ri --no-rdoc" > ~/.gemrc
+```
+
+### Get Ruby with Ubuntu/Debian package
+
+This is a stable but already outdated version of Ruby
+
+```shell
+sudo apt-get install ruby1.9.1 ruby1.9.1-dev
+
+ruby -v
+=> ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
 ```
 
 #### Le projet
 
 Puis on installe les dépendances du projet bibliotech
 
-```
-cd workspace/bibliotech
+```shell
+cd ~/my_workspace/bibliotech
 [sudo] gem update
 [sudo] gem install bundler
 bundle install
 ```
 
-Une fois que les différents composants ont été rapatriés, on lance une session locale :
+Une fois que les différents composants ont été rapatriés, on lance une session de développement locale :
 
 ```
+cd ~/my_workspace/bibliotech
 bundle exec middleman
 ```
 
 Le projet est maintenant accessible via l'adresse indiquée dans le terminal !
 
+When your code (aka mostly posts) is ready for deployment, il devient nécessaire de `construire` le site. Do :
+
+```
+cd workspace/bibliotech
+bundle exec middleman build
+```
+
+Compiled files go to the `build/` directory.
+
 ## TODO
 
-* Recherche pour l'instant active, mais incomplète
-* Breadcrumb pour l'instant inactif
-* CSS / graphisme général en beta
+* Complete search and templating
+* Breadcrumb inactiv
+* General CSS / graphism
 * Fix bootstrap affix on scroll
 
 ## Documentation
 
 WIP
 
-### Ressources générales
+### General ressources
 
 [Middleman](http://middlemanapp.com/)
 
-### Ressources spécifiques
+### Project specific ressources
 
-#### Composant de recherche
+#### Create a new post and add some metadatas
 
-Lors de la compilation, on crée un fichier contenant divers mots-clefs parsé dans les posts. C'est ce fichier qui sert d'index pour la recherche.
-
-A perfectionner...
-
-#### Ajouter un nouveau fichier/article
-
-Pour l'instant, on pose les fichiers en ".html.md" dans le dossier posts/
-
-Y'a un système simple de layouts, assets, etc.
-
-Ajouter des metadonnées à un fichier md, c'est simple (seuls 'title' et 'date' sont obligatoires) :
+Simply create a new `your-name.html.md` file in `source/posts/`.
+Then add some metadatas between 2 lines of `---`.
 
 ```markdown
-
 ---
-title: Example Article
-date: 2012-01-01
+title: Hello world
+date: 2001-01-01 21:12
 
 authors: Foo du Bar
-categories: example, linux
-tags: example, lorem, test
+categories: hello
+tags: example, test, bibliotech
 banner: /posts_uploads/2013/11/foo-du-bar.jpg
 
 "sources": [
   {
-    "label": "Je suis le label 1",
+    "label": "I am the label n°1",
     "href": "http://www.nyan.cat/",
     "lang": "EN"
   },
   {
-    "label": "Et voici mon pote le label 2",
+    "label": "Et voilà !",
     "href": "http://www.estcequonmetenprodaujourdhui.info/",
     "lang": "FR"
   },
   {
-    "label": "Le 3 ok tu peux venir aussi",
+    "label": "Yeah common' ! Dance with me in the snow",
     "href": "http://www.youtube.com/watch?v=-ecg5_Y08KI",
     "lang": "FR"
   }
@@ -156,14 +164,29 @@ layout: posts
 
 ---
 
+Lorem ipsum inc.
+
 ```
 
-Pour l'instant, seul les metas `title`, `date` et `layouts` sont obligatoires.
+Only `title`, `date` and `layouts` metas are mandatory, others are optionnals.
+
+|Meta    |Usage                                        |
+| title  | eq. to html <h1>, use in view list and post |
+| date   | date use in view list and post              |
+| layouts| specific template to use (see layouts dir)  |
+
+#### Search
+
+Lors de la compilation, on crée un fichier contenant divers mots-clefs parsé dans les posts. C'est ce fichier qui sert d'index pour la recherche.
+
+A perfectionner...
+
 
 ## Credits
 
 Based on [Middleman](http://middlemanapp.com/)
 Bibliotech inspired by open source code of [LeonB](https://github.com/LeonB/blog.vanutsteen.nl)
+
 
 ## Licence
 

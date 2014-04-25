@@ -185,7 +185,7 @@ Will install also
 * php-apc
 
 ```
-sudo apt-get install php5 libapache2-mod-php5 php5-mysql php5-mcrypt php5-curl
+sudo apt-get install php5 libapache2-mod-php5 php5-mysql php5-mcrypt php5-curl php5-intl
 ```
 
 ### PHPMyAdmin
@@ -264,12 +264,22 @@ npm -v
 npm install -g less
 ```
 
-Compile with 
+Compile with
 
 ```
 lessc input.less > output.css -x
 ```
 
+### Grunt
+
+[Grunt official](http://gruntjs.com/)
+[Grunt rookie 1](https://www.erianna.com/using-grunt-to-minify-and-compress-assets)
+[Grunt rookie 2](http://putaindecode.fr/posts/js/premiers-pas-avec-grunt/)
+
+```
+npm install -g grunt-cli
+npm install -g grunt-init
+```
 
 ## Ruby env
 
@@ -377,7 +387,7 @@ add (adapt path before making a dummy copy)
 </VirtualHost>
 ```
 
-then 
+then
 
 ```
 sudo a2ensite tool_rockmongo.conf
@@ -392,7 +402,7 @@ sudo pecl install mongo
 
 then add the following line to your php.ini file:
 
-WIP 
+WIP
 
 ```
 sudo vim /etc/php5/apache2/php.ini /etc/php5/cli/php.ini -p
@@ -471,6 +481,14 @@ htop --version
 sudo apt-get install filezilla filezilla-common
 ```
 
+
+## Haskell env
+
+BDSM !
+
+```
+sudo apt-get install haskell-platform
+```
 
 ## Various config
 
