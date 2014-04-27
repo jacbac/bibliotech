@@ -81,7 +81,7 @@ ruby -v
 => ruby 1.9.3p194 (2012-04-20 revision 35410) [x86_64-linux]
 ```
 
-#### Le projet
+## Bibliotech
 
 Puis on installe les dépendances du projet bibliotech
 
@@ -110,12 +110,23 @@ bundle exec middleman build
 
 Compiled files go to the `build/` directory.
 
+### Use Sublime-Text to push and publish your post on remote server
+
+WIP Just an idea
+
+Automated build and publish system with Sublime-Text Build ?
+
+* [Link 1](http://matthewpalmer.net/blog/2014/01/18/publish-jekyll-posts-from-sublime-text-2/)
+* [Link 2](http://www.devwithimagination.com/2014/03/16/sublime-text-3-build-systems/)
+
+
 ## TODO
 
 * Complete search and templating
 * Breadcrumb inactiv
 * General CSS / graphism
 * Fix bootstrap affix on scroll
+
 
 ## Documentation
 

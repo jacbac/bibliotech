@@ -192,3 +192,12 @@ Search for `LESS` and click enter.
 
 Select "Install Package" from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or `⇧⌘P` on OS X
 Search for `Dayly`Reese Colour Scheme" and click enter.
+
+
+## Custom build systems
+
+[](http://addyosmani.com/blog/custom-sublime-text-build-systems-for-popular-tools-and-languages/)
+
+
+## Snippets
+
