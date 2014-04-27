@@ -152,8 +152,9 @@ configure :build do
   # require "middleman-smusher"
   # activate :smusher
 
-  # Use relative URLs
-  # activate :relative_assets
+  # Use relative URLs for GitHub pages
+  activate :relative_assets
+  set :relative_links, true
 
   # Or use a different image path
   # set :http_prefix, "/Content/images/"
