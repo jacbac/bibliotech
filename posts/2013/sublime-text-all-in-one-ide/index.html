@@ -1,0 +1,446 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <!-- Always force latest IE rendering engine or request Chrome Frame -->
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <meta name="description" content="A static site for non-static documentation">
+    <meta name="keywords" content="bibliotech, doc, documentation">
+
+    <title>Bibliotech | Sublime Text Editor</title>
+
+    <link href="//fonts.googleapis.com/css?family=Source+Sans Pro:400,200italic,200,300,400italic,600italic,600,700" rel="stylesheet" type="text/css">
+    <link href="/assets/css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/css/monokai.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/css/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/assets/css/main.css" media="screen" rel="stylesheet" type="text/css" />
+  </head>
+  <body data-spy="scroll" data-target="#table-content">
+    <header role="banner">
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">Bibliotech</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Accueil</a></li>
+          <li><a href="/">Aidez-moi !</a></li>
+        </ul>
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="search" class="search-term form-control" placeholder="Recherche...">
+          </div>
+          <button type="submit" class="search-submit btn btn-default">Go !</button>
+        </form>      
+      </div><!-- /.navbar-collapse -->
+    </div>
+  </nav>
+</header>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 post-banner">
+          <div class="search-results"></div>
+        </div>
+      </div>
+      <div role="main-intro">
+        <div class="row">
+          <div class="col-md-4 post-banner">
+              <img alt="Sublime Text Editor" height="202" src="/posts_uploads/2013/11/nick-nolte.jpg" />
+          </div>
+          <div class="col-md-8 post-title">
+            <h1 class="entry-title">Sublime Text Editor</h1>
+            <div class="row text-muted metas article-metas">
+              <div class="col-md-12">
+                <span class="authors">&Eacute;crit par <a href="/authors/jacbac/">JacBac</a></span>
+                <span class="date-published">Publié le <time class="published" datetime="2013-12-21T14:00:00+01:00">21 December 2013</time></span>
+                <span class="categories">Catégories :  
+                <a href="/categories/ide/">ide</a>, <a href="/categories/sublime/">sublime</a></span>
+                <span class="tags">Mots-clefs :  
+                <a href="/posts/tags/ide/">ide</a>, <a href="/posts/tags/install/">install</a>, <a href="/posts/tags/plug-ins/">plug-ins</a></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <aside id="table-content" class="nav post-aside affix" data-spy="affix" role="complementary">
+            <h4>Index</h4>
+            <ul>
+<li>
+<a href="#toc_0">Install</a>
+</li>
+<li>
+<a href="#toc_1">Pimp my [r]ide !</a>
+</li>
+<li>
+<a href="#toc_2">Sublime Text packages</a>
+<ul>
+<li>
+<a href="#toc_3">Sidebar Enhancements</a>
+</li>
+<li>
+<a href="#toc_4">Alignment</a>
+</li>
+<li>
+<a href="#toc_5">Color Highlighter</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_6">QA Tools</a>
+<ul>
+<li>
+<a href="#toc_7">Doc​Blockr</a>
+<ul>
+<li>
+<a href="#toc_8">Basic usage</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_9">PHP CS-Fixer</a>
+<ul>
+<li>
+<a href="#toc_10">Basic usage</a>
+</li>
+<li>
+<a href="#toc_11">Sublime Linter</a>
+</li>
+<li>
+<a href="#toc_12">CSSLint</a>
+</li>
+<li>
+<a href="#toc_13">Basic usage</a>
+</li>
+<li>
+<a href="#toc_14">JSLint</a>
+</li>
+<li>
+<a href="#toc_15">Basic usage</a>
+</li>
+<li>
+<a href="#toc_16">Less2Css</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_17">Git</a>
+<ul>
+<li>
+<a href="#toc_18">Git Gutter</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_19">Markdown</a>
+<ul>
+<li>
+<a href="#toc_20">Markdown Preview</a>
+</li>
+<li>
+<a href="#toc_21">Basic usage</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_22">Syntax highlighting</a>
+<ul>
+<li>
+<a href="#toc_23">Monokai Extended</a>
+</li>
+<li>
+<a href="#toc_24">LESS</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="#toc_25">Theme</a>
+</li>
+</ul>
+</li>
+</ul>
+
+            <h4>Sources et références</h4>
+<ul>
+    <li>(EN) <a href="http://www.sublimetext.com/">Sublime-Text Official</a></li>
+    <li>(EN) <a href="https://sublime.wbond.net/installation">Package Control</a></li>
+    <li>(EN) <a href="https://sublime.wbond.net/">Sublime-Text package repository</a></li>
+</ul>
+        </aside>  
+        </div>    
+        <div class="col-md-8 post" role="main">
+          <article class="entry">
+            <div class="entry-content">
+              <h2 id="toc_0">Install</h2>
+
+<p><a href="http://www.sublimetext.com/">Official page</a></p>
+
+<h2 id="toc_1">Pimp my [r]ide !</h2>
+
+<p>Let&#39;start by the mother of all sublime plug-ins : Package Control.</p>
+
+<p>The simplest method of installation is through the Sublime Text console. The console is accessed via <code>View &gt; Show Console menu</code>. Once open, paste the the Python code into the console.</p>
+<pre class="highlight plaintext">import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+</pre>
+<h2 id="toc_2">Sublime Text packages</h2>
+
+<h3 id="toc_3">Sidebar Enhancements</h3>
+
+<p><a href="https://sublime.wbond.net/packages/SideBarEnhancements">Sidebar Enhancements</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;SideBarEnhancements&rdquo; and click enter.</p>
+
+<h3 id="toc_4">Alignment</h3>
+
+<p><a href="https://sublime.wbond.net/packages/Alignment">Alignment</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;Alignment&rdquo; and click enter.</p>
+
+<h3 id="toc_5">Color Highlighter</h3>
+
+<p><a href="https://sublime.wbond.net/packages/Color%20Highlighter">Color Highlighter</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;Color Highlighter&rdquo; and click enter.</p>
+
+<h2 id="toc_6">QA Tools</h2>
+
+<h3 id="toc_7">Doc​Blockr</h3>
+
+<p><a href="https://sublime.wbond.net/packages/Doc​Blockr">Doc​Blockr</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;Doc​Blockr&rdquo; and click enter.</p>
+
+<h4 id="toc_8">Basic usage</h4>
+
+<p>Type <code>/**</code> or <code>/*</code> then enter</p>
+
+<h3 id="toc_9">PHP CS-Fixer</h3>
+
+<p>Requires <code>php-cs-fixer</code> to work.</p>
+
+<p><a href="https://sublime.wbond.net/packages/Phpcs">PHP CS-Fixer</a></p>
+
+<p>The PHP Coding Standards Fixer tool fixes most issues in your code when you want to follow the PHP coding standards as defined in the PSR-1 and PSR-2 documents.
+<a href="http://cs.sensiolabs.org">CS-Fixer on Sensio-Labs</a></p>
+
+<h4 id="toc_10">Basic usage</h4>
+
+<p>Auto-correct files on save (<kbd>Ctrl</kbd> <kbd>S</kbd>), according to basic or user rules.</p>
+
+<h4 id="toc_11">Sublime Linter</h4>
+
+<p><a href="#"></a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;SublimeLinter&rdquo; and click enter.</p>
+
+<h4 id="toc_12">CSSLint</h4>
+
+<p>Requires <code>NodeJS</code> and <code>csslint</code> node package to work</p>
+
+<p><a href="https://sublime.wbond.net/packages/SublimeLinter-csslint">CSSLint</a></p>
+<pre class="highlight plaintext">npm install -g csslint
+</pre>
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;CSSLint&rdquo; and click enter.</p>
+
+<h4 id="toc_13">Basic usage</h4>
+
+<p>Search for <code>CSSLint: Run CSSLint</code> from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X or use a keyboard shortcut (by default this is <code>Ctrl+Alt+C</code>).</p>
+
+<p>Change this by adding something like the following to your key bindings:</p>
+
+<p>{ &ldquo;keys&rdquo;: [&ldquo;ctrl+alt+c&rdquo;], &ldquo;command&rdquo;: &ldquo;csslint&rdquo; }</p>
+
+<h4 id="toc_14">JSLint</h4>
+
+<p>Requires <code>NodeJS</code> to work.</p>
+
+<p><a href="https://sublime.wbond.net/packages/JSLint">JSLint</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;JSLint&rdquo; and click enter.</p>
+
+<h4 id="toc_15">Basic usage</h4>
+
+<p>Make a multi-line selection, or multiple selections
+Press <kbd>Ctrl</kbd> <kbd>Alt</kbd> <kbd>A</kbd> on Windows and Linux, or <code>Cmd+Ctrl+A</code> on OS X</p>
+
+<h4 id="toc_16">Less2Css</h4>
+
+<p>Requires <code>lessc</code> installed on <code>PATH</code>.</p>
+
+<p><a href="https://sublime.wbond.net/packages/Less2Css">Less2Css</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;Less2Css&rdquo; and click enter.</p>
+
+<h3 id="toc_17">Git</h3>
+
+<h4 id="toc_18">Git Gutter</h4>
+
+<p><a href="https://sublime.wbond.net/packages/GitGutter">GitGutter</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;GitGutter&rdquo; and click enter.</p>
+
+<h3 id="toc_19">Markdown</h3>
+
+<h4 id="toc_20">Markdown Preview</h4>
+
+<p><a href="https://sublime.wbond.net/packages/Markdown%20Preview">Markdown Preview</a></p>
+
+<p>Provides markdown preview in browser.</p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;LESS&rdquo; and click enter.</p>
+
+<h4 id="toc_21">Basic usage</h4>
+
+<p>WIP</p>
+
+<h3 id="toc_22">Syntax highlighting</h3>
+
+<h4 id="toc_23">Monokai Extended</h4>
+
+<p><a href="https://github.com/jisaacks/sublime-monokai-extended">Monokai-Extended</a></p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;Monokai Extended&rdquo; and click enter.</p>
+
+<h4 id="toc_24">LESS</h4>
+
+<p><a href="https://sublime.wbond.net/packages/LESS">LESS Highlighting</a></p>
+
+<p>Provides syntax highlighting for .less files, along with snippets and completions.</p>
+
+<p>Select &ldquo;Install Package&rdquo; from the Command Palette: <kbd>Ctrl</kbd> <kbd>Shift</kbd> <kbd>P</kbd> on Windows and Linux or <code>⇧⌘P</code> on OS X
+Search for &ldquo;LESS&rdquo; and click enter.</p>
+
+<h3 id="toc_25">Theme</h3>
+
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="affix-footer">
+      <div class="metas">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Tags</h4>
+        <ul>
+            <li><a href="/posts/tags/dot-file/">dot-file</a> <span class="badge badge-primary">3</span></a></li>
+            <li><a href="/posts/tags/bash/">bash</a> <span class="badge badge-primary">3</span></a></li>
+            <li><a href="/posts/tags/alias/">alias</a> <span class="badge badge-primary">3</span></a></li>
+            <li><a href="/posts/tags/terminal/">terminal</a> <span class="badge badge-primary">3</span></a></li>
+            <li><a href="/posts/tags/php/">php</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/ini/">ini</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/propel-1-3/">propel 1.3</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/sql/">sql</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/orm/">orm</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/debian/">debian</a> <span class="badge badge-primary">2</span></a></li>
+            <li><a href="/posts/tags/seafile/">seafile</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/distribution/">distribution</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/markdown/">markdown</a> <span class="badge badge-primary">2</span></a></li>
+            <li><a href="/posts/tags/exemple/">exemple</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/moustache/">moustache</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/mongodb/">mongoDB</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/service/">service</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/export/">export</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/import/">import</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/dump/">dump</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/git/">git</a> <span class="badge badge-primary">4</span></a></li>
+            <li><a href="/posts/tags/stash/">stash</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/navigateur/">navigateur</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/ie8/">IE8</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/ux/">ux</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/gitignore/">gitignore</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/ide/">ide</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/plug-ins/">plug-ins</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/install/">install</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/log/">log</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/debug/">debug</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/apache/">apache</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/server/">server</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/eof/">eof</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/line-endings/">line endings</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/dos2unix/">dos2unix</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/syntax/">syntax</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/linux/">linux</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/ps/">ps</a> <span class="badge badge-primary">1</span></a></li>
+            <li><a href="/posts/tags/kill/">kill</a> <span class="badge badge-primary">1</span></a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Catégories</h4>
+        <ul>
+            <li><a href="/categories/apache/">apache <span class="badge">1</span></a></li>
+            <li><a href="/categories/bibliotech/">bibliotech <span class="badge">1</span></a></li>
+            <li><a href="/categories/cheat-sheet/">cheat sheet <span class="badge">1</span></a></li>
+            <li><a href="/categories/dot-file/">dot-file <span class="badge">3</span></a></li>
+            <li><a href="/categories/frontend/">frontend <span class="badge">1</span></a></li>
+            <li><a href="/categories/git/">git <span class="badge">4</span></a></li>
+            <li><a href="/categories/ide/">ide <span class="badge">1</span></a></li>
+            <li><a href="/categories/ie/">ie <span class="badge">1</span></a></li>
+            <li><a href="/categories/linux/">linux <span class="badge">4</span></a></li>
+            <li><a href="/categories/mongodb/">mongoDB <span class="badge">1</span></a></li>
+            <li><a href="/categories/php/">php <span class="badge">1</span></a></li>
+            <li><a href="/categories/propel/">propel <span class="badge">1</span></a></li>
+            <li><a href="/categories/regexp/">regexp <span class="badge">1</span></a></li>
+            <li><a href="/categories/sublime/">sublime <span class="badge">1</span></a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Auteurs</h4>
+        <ul>
+            <li><a href="/authors/jacbac/">JacBac <span class="badge">18</span></a></li>
+            <li><a href="/authors/nick-nolte/">Nick Nolte <span class="badge">1</span></a></li>
+            <li><a href="/authors/toog/">Toog <span class="badge">1</span></a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h4>Année</h4>
+        <ul>
+            <li><a href="/posts/2014/">2014</a> <span class="badge">1</span></a></li>
+            <li><a href="/posts/2013/">2013</a> <span class="badge">18</span></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+      <footer role="contentinfo">
+  <div class="container">
+    <div class="signature">
+      <p class="text-muted credit">Un site <a href="http://www.fantastic.fr">fantastique</a> &copy; 2014 | Composé sous <a href="http://middlemanapp.com/">Middleman</a></p>
+    </div>
+  </div>
+</footer>
+
+    </div>
+
+    <script src="/assets/js/jquery-2.0.3.min.js" type="text/javascript"></script>
+<script src="/assets/js/bootstrap.js" type="text/javascript"></script>
+<script src="/assets/js/main.js" type="text/javascript"></script>
+  </body>
+</html>

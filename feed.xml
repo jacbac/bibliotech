@@ -1,0 +1,616 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Bibliotech</title>
+  <subtitle>Tech for all. All for tech</subtitle>
+  <id>http://blog.url.com/posts</id>
+  <link href="http://blog.url.com/posts"/>
+  <link href="http://blog.url.com/feed.xml" rel="self"/>
+  <updated>2014-04-18T08:30:00Z</updated>
+  <author>
+    <name>Blog Author</name>
+  </author>
+  <entry>
+    <title>Regexp</title>
+    <link rel="alternate" href="http://blog.url.com/posts/2014/regexp/"/>
+    <id>http://blog.url.com/posts/2014/regexp/</id>
+    <published>2014-04-18T08:30:00Z</published>
+    <updated>2014-04-21T14:13:29+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2 id="toc_0"&gt; Phone&lt;/h2&gt;
+
+&lt;h3 id="toc_1"&gt;Is french mobile phone number&lt;/h3&gt;
+
+&lt;p&gt;Description:    French Post Code Validation
+Regular Expression: ^0[1-6]{1}(([0-9]{2}){4})|((\s[0-9]{2}){4})|((-[0-9]{2}){4})$
+Pass:   01 46 70 89 12|||01-46-70-89-12|||0146708912
+Fail:   01-46708912|||01 46708912|||+33235256677&lt;/p&gt;
+
+&lt;h2 id="toc_2"&gt; Tech&lt;/h2&gt;
+
+&lt;h3 id="toc_3"&gt; Is IP v4 address&lt;/h3&gt;
+
+&lt;p&gt;Description:    Validates IP addresses in the dotted quad form
+Regular Expression: ^(([3-9]\d?|[01]\d{0,2}|2\d?|2[0-4]\d|25[0-5]).){3}([3-9]\d?|[01]\d{0,2}|2\d?|2[0-4]\d|25[0-5])$
+Pass:   192.168.1.1|||10.2.234.1|||66.129.71.122
+Fail:   192.168.1|||10.2.1234.1|||66 129 71 122&lt;/p&gt;
+
+&lt;h3 id="toc_4"&gt;Is IP v6 address&lt;/h3&gt;
+
+&lt;p&gt;Description:    Validates all IPv6 text representations as defined within RFC 2373
+Regular Expression: ^(^(([0-9A-F]{1,4}(((:[0-9A-F]{1,4}){5}::[0-9A-F]{1,4})|((:[0-9A-F]{1,4}){4}::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,1})|((:[0-9A-F]{1,4}){3}::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,2})|((:[0-9A-F]{1,4}){2}::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,3})|(:[0-9A-F]{1,4}::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,4})|(::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,5})|(:[0-9A-F]{1,4}){7}))$|^(::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,6})$)|^::$)|^((([0-9A-F]{1,4}(((:[0-9A-F]{1,4}){3}::([0-9A-F]{1,4}){1})|((:[0-9A-F]{1,4}){2}::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,1})|((:[0-9A-F]{1,4}){1}::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,2})|(::[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,3})|((:[0-9A-F]{1,4}){0,5})))|([:]{2}[0-9A-F]{1,4}(:[0-9A-F]{1,4}){0,4})):|::)((25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{0,2}).){3}(25[0-5]|2[0-4][0-9]|[0-1]?[0-9]{0,2})$$
+Pass:   ::0:0:0:FFFF:129.144.52.38|||FEDC:BA98::3210:FEDC:BA98:7654:3210|||::13.1.68.3
+Fail:   FEDC:BA98:7654:3210:FEDC:BA98:7654:3210:1234|||3210:FEDC:BA98:7654:3210:1234|||:FEDC:BA98:7654:3210:&lt;/p&gt;
+
+&lt;h2 id="toc_5"&gt; Other&lt;/h2&gt;
+
+&lt;h3 id="toc_6"&gt; Is ISBN 10&lt;/h3&gt;
+
+&lt;p&gt;Description:    Validation of 10 digit ISBN. The ISBN number must be preceded by the text &amp;ldquo;ISBN:&amp;rdquo; or &amp;ldquo;ISBN-10:&amp;rdquo; , the colon is optional.
+Regular Expression: ISBN(?:-10)?:?\x20(?=.{13}$)\d{1,5}([- ])\d{1,7}\1\d{1,6}\1(\d|X)$
+Pass:   ISBN-10: 0-93028-923-4
+Fail:   ISBN-13: 978-0-5960-0289-3&lt;/p&gt;
+
+&lt;h3 id="toc_7"&gt;Is ISBN 13&lt;/h3&gt;
+
+&lt;p&gt;Description:    Validation of new 13 digit ISBN. The ISBN number must be preceded by the text &amp;ldquo;ISBN:&amp;rdquo; or &amp;ldquo;ISBN-13:&amp;rdquo; , the colon is optional.
+Regular Expression: ISBN(?:-13)?:?\x20*(?=.{17}$)97(?:8|9)([ -])\d{1,5}\1\d{1,7}\1\d{1,6}\1\d$
+Pass:   ISBN-13: 978-0-5960-0289-3
+Fail:   ISBN-10: 0596002890&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>php.ini</title>
+    <link rel="alternate" href="http://blog.url.com/posts/2013/php.ini/"/>
+    <id>http://blog.url.com/posts/2013/php.ini/</id>
+    <published>2013-12-27T15:00:00Z</published>
+    <updated>2014-04-21T14:13:29+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;p&gt;PHP Warning: Module &amp;lsquo;modulename&amp;rsquo; already loaded in Unknown on line 0
+This page describes how to resolve the following PHP warning: PHP Warning: Module &amp;lsquo;modulename&amp;rsquo; already loaded in Unknown on line 0&lt;/p&gt;
+
+&lt;p&gt;Problem&lt;/p&gt;
+
+&lt;p&gt;When running the CLI version of PHP from the command line, you may receive errors like the following:&lt;/p&gt;
+
+&lt;p&gt;[root@myserver /root]$ php -v 
+PHP Warning: Module &amp;lsquo;pcre&amp;rsquo; already loaded in Unknown on line 0 
+PHP Warning: PHP Startup: Unable to load dynamic library &amp;lsquo;/usr/local/php5/lib/php/extensions/no-debug-non-zts-20060613/spl.so&amp;rsquo; - /usr/local/php5/lib/php/extensions/no-debug-non-zts-20060613/spl.so: Undefined symbol &amp;ldquo;pcre_exec&amp;rdquo; in Unknown on line 0 
+PHP Warning: Module &amp;lsquo;SimpleXML&amp;rsquo; already loaded in Unknown on line 0 
+PHP Warning: Module &amp;lsquo;session&amp;rsquo; already loaded in Unknown on line 0 
+PHP Warning: Module &amp;lsquo;exif&amp;rsquo; already loaded in Unknown on line 0 
+PHP 5.2.3 (cli) (built: Jun 14 2007 15:29:17) 
+Copyright &amp;copy; 1997-2007 The PHP Group 
+Zend Engine v2.2.0, Copyright &amp;copy; 1998-2007 Zend Technologies&lt;/p&gt;
+
+&lt;p&gt;Cause&lt;/p&gt;
+
+&lt;p&gt;There are two ways to load most extensions in PHP. One is by compiling the extension directly into the PHP binary. The other is by loading a shared extension dynamically via an ini file. The errors indicate that dynamic extensions are being loaded via .ini files, even though they are already compiled into the PHP binary.&lt;/p&gt;
+
+&lt;p&gt;Fix&lt;/p&gt;
+
+&lt;p&gt;To fix this problem, you must edit your php.ini (or extensions.ini) file and comment-out the extensions that are already compiled-in. For example, after editing, your ini file may look like the lines below:&lt;/p&gt;
+
+&lt;p&gt;;extension=pcre.so
+;extension=spl.so
+;extension=simplexml.so
+;extension=session.so
+;extension=exif.so
+You may also erase those lines instead of commenting them out. Once you have disabled those lines, run php -v to see if the warnings go away.&lt;/p&gt;
+
+&lt;p&gt;Additional Info&lt;/p&gt;
+
+&lt;p&gt;To see which extensions are compiled-in to your PHP binary, run the following command:&lt;/p&gt;
+
+&lt;p&gt;php -m
+You can also view the configure command, which will show which extensions are enabled and compiled-in, or built as shared, dynamic modules.&lt;/p&gt;
+
+&lt;p&gt;php -i | grep Configure
+The dynamic extensions are usually located in a special &amp;ldquo;extensions&amp;rdquo; folder, which varies by operating system environment. Your php.ini usually has a line that describes where the folder is located. For example:&lt;/p&gt;
+
+&lt;p&gt;; Directory in which the loadable extensions (modules) reside.
+extension_dir = &amp;ldquo;/usr/local/php5/lib/php/extensions/no-debug-non-zts-20060613/&amp;rdquo;&lt;/p&gt;
+
+&lt;p&gt;php -i | grep timezone&lt;/p&gt;
+
+&lt;p&gt;php -i | grep apc&lt;/p&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Sublime Text Editor</title>
+    <link rel="alternate" href="http://blog.url.com/posts/2013/sublime-text-all-in-one-ide/"/>
+    <id>http://blog.url.com/posts/2013/sublime-text-all-in-one-ide/</id>
+    <published>2013-12-21T13:00:00Z</published>
+    <updated>2014-04-21T14:13:29+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2 id="toc_0"&gt;Install&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://www.sublimetext.com/"&gt;Official page&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="toc_1"&gt;Pimp my [r]ide !&lt;/h2&gt;
+
+&lt;p&gt;Let&amp;#39;start by the mother of all sublime plug-ins : Package Control.&lt;/p&gt;
+
+&lt;p&gt;The simplest method of installation is through the Sublime Text console. The console is accessed via &lt;code&gt;View &amp;gt; Show Console menu&lt;/code&gt;. Once open, paste the the Python code into the console.&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;import urllib.request,os; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); open(os.path.join(ipp, pf), 'wb').write(urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ','%20')).read())
+&lt;/pre&gt;
+&lt;h2 id="toc_2"&gt;Sublime Text packages&lt;/h2&gt;
+
+&lt;h3 id="toc_3"&gt;Sidebar Enhancements&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/SideBarEnhancements"&gt;Sidebar Enhancements&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;SideBarEnhancements&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h3 id="toc_4"&gt;Alignment&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/Alignment"&gt;Alignment&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;Alignment&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h3 id="toc_5"&gt;Color Highlighter&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/Color%20Highlighter"&gt;Color Highlighter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;Color Highlighter&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h2 id="toc_6"&gt;QA Tools&lt;/h2&gt;
+
+&lt;h3 id="toc_7"&gt;Doc​Blockr&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/Doc​Blockr"&gt;Doc​Blockr&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;Doc​Blockr&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h4 id="toc_8"&gt;Basic usage&lt;/h4&gt;
+
+&lt;p&gt;Type &lt;code&gt;/**&lt;/code&gt; or &lt;code&gt;/*&lt;/code&gt; then enter&lt;/p&gt;
+
+&lt;h3 id="toc_9"&gt;PHP CS-Fixer&lt;/h3&gt;
+
+&lt;p&gt;Requires &lt;code&gt;php-cs-fixer&lt;/code&gt; to work.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/Phpcs"&gt;PHP CS-Fixer&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The PHP Coding Standards Fixer tool fixes most issues in your code when you want to follow the PHP coding standards as defined in the PSR-1 and PSR-2 documents.
+&lt;a href="http://cs.sensiolabs.org"&gt;CS-Fixer on Sensio-Labs&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id="toc_10"&gt;Basic usage&lt;/h4&gt;
+
+&lt;p&gt;Auto-correct files on save (&lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;S&lt;/kbd&gt;), according to basic or user rules.&lt;/p&gt;
+
+&lt;h4 id="toc_11"&gt;Sublime Linter&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="#"&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;SublimeLinter&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h4 id="toc_12"&gt;CSSLint&lt;/h4&gt;
+
+&lt;p&gt;Requires &lt;code&gt;NodeJS&lt;/code&gt; and &lt;code&gt;csslint&lt;/code&gt; node package to work&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/SublimeLinter-csslint"&gt;CSSLint&lt;/a&gt;&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;npm install -g csslint
+&lt;/pre&gt;
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;CSSLint&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h4 id="toc_13"&gt;Basic usage&lt;/h4&gt;
+
+&lt;p&gt;Search for &lt;code&gt;CSSLint: Run CSSLint&lt;/code&gt; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X or use a keyboard shortcut (by default this is &lt;code&gt;Ctrl+Alt+C&lt;/code&gt;).&lt;/p&gt;
+
+&lt;p&gt;Change this by adding something like the following to your key bindings:&lt;/p&gt;
+
+&lt;p&gt;{ &amp;ldquo;keys&amp;rdquo;: [&amp;ldquo;ctrl+alt+c&amp;rdquo;], &amp;ldquo;command&amp;rdquo;: &amp;ldquo;csslint&amp;rdquo; }&lt;/p&gt;
+
+&lt;h4 id="toc_14"&gt;JSLint&lt;/h4&gt;
+
+&lt;p&gt;Requires &lt;code&gt;NodeJS&lt;/code&gt; to work.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/JSLint"&gt;JSLint&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;JSLint&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h4 id="toc_15"&gt;Basic usage&lt;/h4&gt;
+
+&lt;p&gt;Make a multi-line selection, or multiple selections
+Press &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Alt&lt;/kbd&gt; &lt;kbd&gt;A&lt;/kbd&gt; on Windows and Linux, or &lt;code&gt;Cmd+Ctrl+A&lt;/code&gt; on OS X&lt;/p&gt;
+
+&lt;h4 id="toc_16"&gt;Less2Css&lt;/h4&gt;
+
+&lt;p&gt;Requires &lt;code&gt;lessc&lt;/code&gt; installed on &lt;code&gt;PATH&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/Less2Css"&gt;Less2Css&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;Less2Css&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h3 id="toc_17"&gt;Git&lt;/h3&gt;
+
+&lt;h4 id="toc_18"&gt;Git Gutter&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/GitGutter"&gt;GitGutter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;GitGutter&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h3 id="toc_19"&gt;Markdown&lt;/h3&gt;
+
+&lt;h4 id="toc_20"&gt;Markdown Preview&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/Markdown%20Preview"&gt;Markdown Preview&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Provides markdown preview in browser.&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;LESS&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h4 id="toc_21"&gt;Basic usage&lt;/h4&gt;
+
+&lt;p&gt;WIP&lt;/p&gt;
+
+&lt;h3 id="toc_22"&gt;Syntax highlighting&lt;/h3&gt;
+
+&lt;h4 id="toc_23"&gt;Monokai Extended&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://github.com/jisaacks/sublime-monokai-extended"&gt;Monokai-Extended&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;Monokai Extended&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h4 id="toc_24"&gt;LESS&lt;/h4&gt;
+
+&lt;p&gt;&lt;a href="https://sublime.wbond.net/packages/LESS"&gt;LESS Highlighting&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Provides syntax highlighting for .less files, along with snippets and completions.&lt;/p&gt;
+
+&lt;p&gt;Select &amp;ldquo;Install Package&amp;rdquo; from the Command Palette: &lt;kbd&gt;Ctrl&lt;/kbd&gt; &lt;kbd&gt;Shift&lt;/kbd&gt; &lt;kbd&gt;P&lt;/kbd&gt; on Windows and Linux or &lt;code&gt;⇧⌘P&lt;/code&gt; on OS X
+Search for &amp;ldquo;LESS&amp;rdquo; and click enter.&lt;/p&gt;
+
+&lt;h3 id="toc_25"&gt;Theme&lt;/h3&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Propel v1.3 enhanced</title>
+    <link rel="alternate" href="http://blog.url.com/posts/2013/propel-v1-3/"/>
+    <id>http://blog.url.com/posts/2013/propel-v1-3/</id>
+    <published>2013-12-02T10:30:00Z</published>
+    <updated>2014-04-21T14:13:29+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2 id="toc_0"&gt;Créer ou modifier un schema propel&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://trac.propelorm.org/wiki/Documentation/1.3/Schema"&gt;La documentation officielle sur les schémas, c&amp;#39;est ici&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://trac.propelorm.org/wiki/Documentation/1.3/ColumnTypes"&gt;Et spécifiquement sur les types possibles des colonnes&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id="toc_1"&gt;Récupérer de la BDD un tableau de données&lt;/h2&gt;
+
+&lt;h2 id="toc_2"&gt;Récupérer de la BDD un objet particulier&lt;/h2&gt;
+
+&lt;p&gt;Pour cela on &lt;code&gt;hydrate&lt;/code&gt; manuellement les données pour en faire des objets&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;$stmt = MarketingUserPeer::doSelectStmt($c);
+
+$users = array();
+while($row = $stmt-&amp;gt;fetch(PDO::FETCH_NUM))
+{
+  $marketingUser = new MarketingUser();
+  $marketingUser-&amp;gt;hydrate($row);
+  $users[] = $marketingUser;
+}
+return $users;
+&lt;/pre&gt;
+&lt;h2 id="toc_3"&gt;Set DISTINCT&lt;/h2&gt;
+</content>
+  </entry>
+  <entry>
+    <title>Personnalisation du terminal avec .bashrc</title>
+    <link rel="alternate" href="http://blog.url.com/posts/2013/dot-file-bashrc/"/>
+    <id>http://blog.url.com/posts/2013/dot-file-bashrc/</id>
+    <published>2013-11-29T11:10:00Z</published>
+    <updated>2014-04-21T14:13:29+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2 id="toc_0"&gt;Inspiration&lt;/h2&gt;
+&lt;pre class="highlight shell"&gt;&lt;span class="c"&gt;# ~/.bashrc: executed by bash(1) for non-login shells.&lt;/span&gt;
+&lt;span class="c"&gt;# see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)&lt;/span&gt;
+&lt;span class="c"&gt;# for examples&lt;/span&gt;
+
+&lt;span class="c"&gt;# If not running interactively, don't do anything&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt; -z &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$PS1&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt;
+
+
+&lt;span class="c"&gt;# -------------------- History --------------------&lt;/span&gt;
+
+&lt;span class="c"&gt;# don't put duplicate lines in the history. See bash(1) for more options&lt;/span&gt;
+&lt;span class="c"&gt;# don't overwrite GNU Midnight Commander's setting of `ignorespace'.&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;HISTCONTROL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="nv"&gt;$HISTCONTROL&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;HISTCONTROL&lt;/span&gt;&lt;span class="p"&gt;+,&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;ignoredups
+&lt;span class="c"&gt;# ... or force ignoredups and ignorespace&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;HISTCONTROL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;ignoreboth
+
+&lt;span class="c"&gt;# append to the history file, don't overwrite it&lt;/span&gt;
+&lt;span class="nb"&gt;shopt&lt;/span&gt; -s histappend
+
+&lt;span class="c"&gt;# check the window size after each command and, if necessary,&lt;/span&gt;
+&lt;span class="c"&gt;# update the values of LINES and COLUMNS.&lt;/span&gt;
+&lt;span class="nb"&gt;shopt&lt;/span&gt; -s checkwinsize
+
+&lt;span class="c"&gt;# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PROMPT_COMMAND&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'history -a'&lt;/span&gt;
+&lt;span class="nv"&gt;HISTSIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10000
+&lt;span class="nv"&gt;HISTFILESIZE&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;10000
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;HISTTIMEFORMAT&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"%d/%m/%y %T "&lt;/span&gt;
+&lt;span class="c"&gt;# variant : export HISTTIMEFORMAT="%h/%d – %H:%M:%S "&lt;/span&gt;
+
+
+&lt;span class="c"&gt;# -------------------- Bash enhancements --------------------&lt;/span&gt;
+
+&lt;span class="c"&gt;# make less more friendly for non-text input files, see lesspipe(1)&lt;/span&gt;
+&lt;span class="o"&gt;[&lt;/span&gt; -x /usr/bin/lesspipe &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nb"&gt;eval&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;&lt;span class="nv"&gt;SHELL&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;/bin/sh lesspipe&lt;span class="k"&gt;)&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+
+&lt;span class="c"&gt;# set variable identifying the chroot you work in (used in the prompt below)&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -z &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$debian_chroot&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -r /etc/debian_chroot &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    &lt;/span&gt;&lt;span class="nv"&gt;debian_chroot&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="k"&gt;$(&lt;/span&gt;cat /etc/debian_chroot&lt;span class="k"&gt;)&lt;/span&gt;
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+&lt;span class="c"&gt;# set a fancy prompt (non-color, unless we know we "want" color)&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$TERM&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="k"&gt;in
+    &lt;/span&gt;xterm-color&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="nv"&gt;color_prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes;;
+&lt;span class="k"&gt;esac&lt;/span&gt;
+
+&lt;span class="c"&gt;# uncomment for a colored prompt, if the terminal has the capability; turned&lt;/span&gt;
+&lt;span class="c"&gt;# off by default to not distract the user: the focus in a terminal window&lt;/span&gt;
+&lt;span class="c"&gt;# should be on the output of commands, not on the prompt&lt;/span&gt;
+&lt;span class="c"&gt;#force_color_prompt=yes&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -n &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$force_color_prompt&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -x /usr/bin/tput &lt;span class="o"&gt;]&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; tput setaf 1 &amp;gt;&amp;amp;/dev/null; &lt;span class="k"&gt;then&lt;/span&gt;
+  &lt;span class="c"&gt;# We have color support; assume it's compliant with Ecma-48&lt;/span&gt;
+  &lt;span class="c"&gt;# (ISO/IEC-6429). (Lack of such support is extremely rare, and such&lt;/span&gt;
+  &lt;span class="c"&gt;# a case would tend to support setf rather than setaf.)&lt;/span&gt;
+  &lt;span class="nv"&gt;color_prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;yes
+    &lt;span class="k"&gt;else
+  &lt;/span&gt;&lt;span class="nv"&gt;color_prompt&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;
+    &lt;span class="k"&gt;fi
+fi
+
+if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$color_prompt&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; yes &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then
+    &lt;/span&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '&lt;/span&gt;
+&lt;span class="k"&gt;else
+    &lt;/span&gt;&lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s1"&gt;'${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '&lt;/span&gt;
+&lt;span class="k"&gt;fi
+&lt;/span&gt;&lt;span class="nb"&gt;unset &lt;/span&gt;color_prompt force_color_prompt
+
+&lt;span class="c"&gt;# If this is an xterm set the title to user@host:dir&lt;/span&gt;
+&lt;span class="k"&gt;case&lt;/span&gt; &lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="nv"&gt;$TERM&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt; &lt;span class="k"&gt;in
+&lt;/span&gt;xterm&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="p"&gt;|&lt;/span&gt;rxvt&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="nv"&gt;PS1&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\[\e&lt;/span&gt;&lt;span class="s2"&gt;]0;&lt;/span&gt;&lt;span class="k"&gt;${&lt;/span&gt;&lt;span class="nv"&gt;debian_chroot&lt;/span&gt;:+&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nv"&gt;$debian_chroot&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="k"&gt;}&lt;/span&gt;&lt;span class="se"&gt;\u&lt;/span&gt;&lt;span class="s2"&gt;@&lt;/span&gt;&lt;span class="se"&gt;\h&lt;/span&gt;&lt;span class="s2"&gt;: &lt;/span&gt;&lt;span class="se"&gt;\w\a\]&lt;/span&gt;&lt;span class="nv"&gt;$PS1&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;span class="k"&gt;*&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+    &lt;span class="p"&gt;;;&lt;/span&gt;
+&lt;span class="k"&gt;esac&lt;/span&gt;
+
+&lt;span class="c"&gt;# colorized man, needs to install most&lt;/span&gt;
+&lt;span class="nb"&gt;export &lt;/span&gt;&lt;span class="nv"&gt;PAGER&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;most
+
+
+&lt;span class="c"&gt;# -------------------- Aliases --------------------&lt;/span&gt;
+
+&lt;span class="c"&gt;# Alias definitions.&lt;/span&gt;
+&lt;span class="c"&gt;# You may want to put all your additions into a separate file like&lt;/span&gt;
+&lt;span class="c"&gt;# ~/.bash_aliases, instead of adding them here directly.&lt;/span&gt;
+&lt;span class="c"&gt;# See /usr/share/doc/bash-doc/examples in the bash-doc package.&lt;/span&gt;
+
+&lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -f ~/.bash_aliases &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+    . ~/.bash_aliases
+&lt;span class="k"&gt;fi&lt;/span&gt;
+
+
+&lt;span class="c"&gt;# -------------------- Completion --------------------&lt;/span&gt;
+
+&lt;span class="c"&gt;# enable programmable completion features (you don't need to enable&lt;/span&gt;
+&lt;span class="c"&gt;# this, if it's already enabled in /etc/bash.bashrc and /etc/profile&lt;/span&gt;
+&lt;span class="c"&gt;# sources /etc/bash.bashrc).&lt;/span&gt;
+&lt;span class="k"&gt;if&lt;/span&gt; ! &lt;span class="nb"&gt;shopt&lt;/span&gt; -oq posix; &lt;span class="k"&gt;then
+  if&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -f /usr/share/bash-completion/bash_completion &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+    . /usr/share/bash-completion/bash_completion
+  &lt;span class="k"&gt;elif&lt;/span&gt; &lt;span class="o"&gt;[&lt;/span&gt; -f /etc/bash_completion &lt;span class="o"&gt;]&lt;/span&gt;; &lt;span class="k"&gt;then&lt;/span&gt;
+    . /etc/bash_completion
+  &lt;span class="k"&gt;fi
+fi&lt;/span&gt;
+
+
+&lt;span class="c"&gt;# -------------------- GIT bashing --------------------&lt;/span&gt;
+
+&lt;span class="k"&gt;function &lt;/span&gt;parse_git_branch &lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="o"&gt;{&lt;/span&gt;
+       git branch 2&amp;gt; /dev/null | sed -e &lt;span class="s1"&gt;'/^[^*]/d'&lt;/span&gt; -e &lt;span class="s1"&gt;'s/* \(.*\)/ (\1)/'&lt;/span&gt;
+&lt;span class="o"&gt;}&lt;/span&gt;
+
+&lt;span class="nv"&gt;RED&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\[\0&lt;/span&gt;&lt;span class="s2"&gt;33[0;31m&lt;/span&gt;&lt;span class="se"&gt;\]&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="nv"&gt;YELLOW&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\[\0&lt;/span&gt;&lt;span class="s2"&gt;33[0;33m&lt;/span&gt;&lt;span class="se"&gt;\]&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="nv"&gt;GREEN&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\[\0&lt;/span&gt;&lt;span class="s2"&gt;33[0;32m&lt;/span&gt;&lt;span class="se"&gt;\]&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+&lt;span class="nv"&gt;NO_COLOUR&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;&lt;span class="se"&gt;\[\0&lt;/span&gt;&lt;span class="s2"&gt;33[0m&lt;/span&gt;&lt;span class="se"&gt;\]&lt;/span&gt;&lt;span class="s2"&gt;"&lt;/span&gt;
+
+&lt;span class="gp"&gt;PS1="$GREEN\u@\h$NO_COLOUR:\w$YELLOW\$(parse_git_branch)$NO_COLOUR\$ &lt;/span&gt;&lt;span class="s2"&gt;"
+#PS1="&lt;/span&gt;&lt;span class="se"&gt;\[\0&lt;/span&gt;33[01;31m&lt;span class="se"&gt;\]&lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="se"&gt;\u&lt;/span&gt;@&lt;span class="se"&gt;\h\[\0&lt;/span&gt;33[00m&lt;span class="se"&gt;\]&lt;/span&gt;:&lt;span class="se"&gt;\[\0&lt;/span&gt;33[01;34m&lt;span class="se"&gt;\]\w&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="se"&gt;\[\0&lt;/span&gt;33[00m&lt;span class="se"&gt;\]\$&lt;/span&gt; &lt;span class="s2"&gt;"
+&lt;/span&gt;&lt;/pre&gt;
+&lt;h2 id="toc_1"&gt;Reload it&lt;/h2&gt;
+&lt;pre class="highlight plaintext"&gt;source ~/.bashrc
+&lt;/pre&gt;</content>
+  </entry>
+  <entry>
+    <title>Message d'obsolescence des navigateurs</title>
+    <link rel="alternate" href="http://blog.url.com/posts/2013/message-obsolescence-des-navigateurs/"/>
+    <id>http://blog.url.com/posts/2013/message-obsolescence-des-navigateurs/</id>
+    <published>2013-11-29T11:00:00Z</published>
+    <updated>2014-04-21T14:13:29+02:00</updated>
+    <author>
+      <name>Article Author</name>
+    </author>
+    <content type="html">&lt;h2 id="toc_0"&gt;Cibler les navigateurs&lt;/h2&gt;
+
+&lt;h3 id="toc_1"&gt;Avec des commentaires conditionnels&lt;/h3&gt;
+&lt;pre class="highlight html"&gt;&lt;span class="c"&gt;&amp;lt;!--[if gte IE 6]&amp;gt; pour IE 6.0 et version plus récentes &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if IE 5.0]&amp;gt; pour IE 5.0 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if IE 5.5000]&amp;gt; pour IE 5.5 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if IE 6]&amp;gt; pour IE 6.0 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if IE 7]&amp;gt; pour IE 7.0 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if IE 8]&amp;gt; pour IE 8.0 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if IE 9]&amp;gt; pour IE 9.0 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if gte IE 7]&amp;gt; pour IE 7 et supérieur &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if lt IE 7]&amp;gt; pour IE inférieur à IE 7 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if lte IE 6]&amp;gt; pour IE 5.0, IE 5.5 et IE 6.0 mais pas IE7.0 et plus &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if (lt IE 6)|(IE 8)]&amp;gt; pour IE inférieur à IE 6.0 ou si IE 8 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if (gt IE 5)&amp;amp;(lt IE 7)]&amp;gt; pour IE supérieur à IE 5.0 et inférieur à IE 7 &amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+
+&lt;span class="c"&gt;&amp;lt;!--[if !IE]&amp;gt;&amp;lt;!--&amp;gt;&lt;/span&gt; si ce n'est pas IE &lt;span class="c"&gt;&amp;lt;!--&amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h3 id="toc_2"&gt;Avec Javascript et Jquery&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://api.jquery.com/jQuery.browser/"&gt;Jquery browser&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://en.wikipedia.org/wiki/Gecko_(layout_engine)"&gt;Browser version Firefox/Gecko&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre class="highlight javascript"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;script&lt;/span&gt; &lt;span class="nx"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"text/javascript"&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="kd"&gt;function&lt;/span&gt; &lt;span class="nx"&gt;is_supported_browser&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;
+     &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toLowerCase&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Is this a version of IE?
+&lt;/span&gt;     &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;msie&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;userAgent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+        &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt; &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;&lt;/span&gt; &lt;span class="mi"&gt;8&lt;/span&gt; &lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Is this a version of Chrome?
+&lt;/span&gt;     &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;chrome&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="sr"&gt;/chrome/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;test&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toLowerCase&lt;/span&gt;&lt;span class="p"&gt;());&lt;/span&gt;
+     &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;chrome&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;userAgent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'chrome/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;7&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;13&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Is this a version of Safari?
+&lt;/span&gt;     &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;safari&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;userAgent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'version/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;=&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+
+     &lt;span class="c1"&gt;// Is this a version of firefox?
+&lt;/span&gt;     &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;mozilla&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toLowerCase&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'firefox'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+     &lt;span class="p"&gt;{&lt;/span&gt;
+        &lt;span class="nx"&gt;userAgent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'firefox/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+        &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+        &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="s1"&gt;'3.6'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;true&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+     &lt;span class="p"&gt;}&lt;/span&gt;
+     &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="kc"&gt;false&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/&lt;/span&gt;&lt;span class="err"&gt;script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;p&gt;&lt;strong&gt;Exemple d&amp;#39;implantation d&amp;#39;une reconnaissance par JS&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;On garde en complément les commentaires conditionnels pour IE &amp;lt; 8 dans le cas où le navigateur ne prend pas en charge JS.&lt;/p&gt;
+&lt;pre class="highlight javascript"&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="nx"&gt;script&lt;/span&gt; &lt;span class="nx"&gt;type&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s2"&gt;"text/javascript"&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;obsolet&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s1"&gt;'&amp;lt;div style="text-align:center; clear:both; position:relative;"&amp;gt;&amp;lt;div style="width:720px; border:1px solid #f0f0f0; background:#f0f0f0; margin:0 auto; padding:0 10px 0 10px; overflow:hidden;"&amp;gt;&amp;lt;div style="width: 80px; float: left;"&amp;gt;&amp;lt;img src="images/browsers/warn_75.png" alt="Warning!"/&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style="width:300px; float:left; font-family:\'Lucida Grande\', \'Lucida Sans Unicode\', Arial, sans-serif; padding:4px;"&amp;gt;&amp;lt;div style="font-size: 14px; font-weight: bold; margin-top: 12px; color: #c00;"&amp;gt;Vous utilisez un navigateur obsolète.&amp;lt;/div&amp;gt;&amp;lt;div style="font-size: 12px; margin-top: 2px; line-height: 16px; color: #666;"&amp;gt;Afin d\'optimiser votre visite sur ce site,&amp;lt;br /&amp;gt; merci de mettre à jour votre Navigateur Internet.&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style="margin-top: 6px;"&amp;gt;&amp;lt;div style="width: 64px; float: left;"&amp;gt;&amp;lt;a href="http://www.google.com/chrome" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-chrome.png" style="border: none;" alt="Télécharger Google Chrome"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style="width: 64px; float: left;"&amp;gt;&amp;lt;a href="http://www.firefox.com" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-firefox.png" style="border: none;" alt="Télécharger Firefox"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style="width: 64px; float: left;"&amp;gt;&amp;lt;a href="http://www.apple.com/safari/download/" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-safari.png" style="border: none;" alt="Télécharger Safari"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style="width: 60px; float: left;"&amp;gt;&amp;lt;a href="http://www.opera.com/download" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-opera.png" style="border: none;" alt="Télécharger Opera"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;div style="width: 50px; float: left;"&amp;gt;&amp;lt;a href="http://windows.microsoft.com/fr-fr/internet-explorer/ie-10-worldwide-languages" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-ie.png" style="border: none;" alt="Télécharger Internet explorer"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;'&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+  &lt;span class="kd"&gt;var&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toLowerCase&lt;/span&gt;&lt;span class="p"&gt;();&lt;/span&gt;
+
+  &lt;span class="k"&gt;if&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;browser&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;mozilla&lt;/span&gt; &lt;span class="o"&gt;&amp;amp;&amp;amp;&lt;/span&gt; &lt;span class="nx"&gt;navigator&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;toLowerCase&lt;/span&gt;&lt;span class="p"&gt;().&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'firefox'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;!=&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+  &lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nx"&gt;userAgent&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'firefox/'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;substring&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;0&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="nx"&gt;userAgent&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;indexOf&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s1"&gt;'.'&lt;/span&gt;&lt;span class="p"&gt;));&lt;/span&gt;
+    &lt;span class="k"&gt;if&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;version&lt;/span&gt; &lt;span class="o"&gt;&amp;lt;=&lt;/span&gt; &lt;span class="s1"&gt;'3.6'&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+      &lt;span class="nx"&gt;$&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nx"&gt;obsolet&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="nx"&gt;prependTo&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="nb"&gt;document&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nx"&gt;body&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+  &lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="sr"&gt;/&lt;/span&gt;&lt;span class="err"&gt;script&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h2 id="toc_3"&gt;Où l&amp;#39;insérer&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Globalement dans le fichier layout.php, en fin de &lt;head&gt; ou au tout début du &lt;body&gt;&lt;/li&gt;
+&lt;li&gt;Ou sur tous les templates en tête de fichier si il n&amp;#39;y a pas de layout.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id="toc_4"&gt;Quoi insérer&lt;/h2&gt;
+
+&lt;h3 id="toc_5"&gt;Message Browse Happy en français&lt;/h3&gt;
+&lt;pre class="highlight html"&gt;&lt;span class="c"&gt;&amp;lt;!--[if lt IE 9]&amp;gt;
+  &amp;lt;p class="chromeframe"&amp;gt;Vous utilisez un &amp;lt;strong&amp;gt;navigateur obsolète&amp;lt;/strong&amp;gt;. Il peut rendre ce site non optimisé. Merci &amp;lt;a href="http://http://http://browsehappy.com/?locale=fr"&amp;gt;de mettre à jour votre navigateur&amp;lt;/a&amp;gt; ou d &amp;lt;a href="http://www.google.com/chromeframe/?redirect=true"&amp;gt;activer Google Chrome Frame&amp;lt;/a&amp;gt; pour améliorer votre navigation.&amp;lt;/p&amp;gt;
+&amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h3 id="toc_6"&gt;Message Browse Happy en anglais&lt;/h3&gt;
+&lt;pre class="highlight html"&gt;&lt;span class="c"&gt;&amp;lt;!--[if lt IE 9]&amp;gt;
+  &amp;lt;p class="chromeframe"&amp;gt;You are using an &amp;lt;strong&amp;gt;outdated&amp;lt;/strong&amp;gt; browser. Please &amp;lt;a href="http://browsehappy.com/"&amp;gt;upgrade your browser&amp;lt;/a&amp;gt; or &amp;lt;a href="http://www.google.com/chromeframe/?redirect=true"&amp;gt;activate Google Chrome Frame&amp;lt;/a&amp;gt; to improve your experience.&amp;lt;/p&amp;gt;
+&amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;
+&lt;h3 id="toc_7"&gt;Message avec images navigateurs intégrées&lt;/h3&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Vérifier les liens vers les pages de téléchargement !&lt;/li&gt;
+&lt;li&gt;Ne pas oublier d&amp;#39;ajouter au projet le fichier de logos navigateurs !&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Ex. copiable à partir de :&lt;/p&gt;
+&lt;pre class="highlight plaintext"&gt;sauter_v3/web/images/browsers
+&lt;/pre&gt;
+&lt;p&gt;Eventuellement, adapter le très beau css ci-dessous&lt;/p&gt;
+
+&lt;p&gt;TODO:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Revoir les font&lt;/li&gt;
+&lt;li&gt;Mettre des &lt;code&gt;&amp;lt;ul&amp;gt;&amp;lt;li&amp;gt;&lt;/code&gt; et des &lt;code&gt;&amp;lt;span&amp;gt;&lt;/code&gt; à la place des &lt;code&gt;&amp;lt;div&amp;gt;&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Revoir le CSS global (inline img plutot que float) ;)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class="highlight html"&gt;&lt;span class="c"&gt;&amp;lt;!--[if lt IE 9]&amp;gt;
+  &amp;lt;div style="text-align:center; clear:both; position:relative"&amp;gt;
+    &amp;lt;div style="width:720px; border:1px solid #f0f0f0; background:#f0f0f0; margin:0 auto; padding:0 10px 0 10px; overflow:hidden;"&amp;gt;
+      &amp;lt;div style="width: 80px; float: left;"&amp;gt;
+        &amp;lt;img src="images/browsers/warn_75.png" alt="Warning!"/&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div style="width:300px; float:left; font-family:'Lucida Grande', 'Lucida Sans Unicode', Arial, sans-serif; padding:4px;"&amp;gt;
+        &amp;lt;div style="font-size: 14px; font-weight: bold; margin-top: 12px; color: #c00;"&amp;gt;Vous utilisez un navigateur obsolète.&amp;lt;/div&amp;gt;
+        &amp;lt;div style="font-size: 12px; margin-top: 2px; line-height: 16px; color: #666;"&amp;gt;Afin d'optimiser votre visite sur ce site,&amp;lt;br /&amp;gt; merci de mettre à jour votre Navigateur Internet.&amp;lt;/div&amp;gt;
+      &amp;lt;/div&amp;gt;
+      &amp;lt;div style="margin-top: 6px;"&amp;gt;
+        &amp;lt;div style="width: 64px; float: left;"&amp;gt;&amp;lt;a href="http://www.google.com/chrome" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-chrome.png" style="border: none;" alt="Télécharger Google Chrome"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div style="width: 64px; float: left;"&amp;gt;&amp;lt;a href="http://www.firefox.com" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-firefox.png" style="border: none;" alt="Télécharger Firefox"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div style="width: 64px; float: left;"&amp;gt;&amp;lt;a href="http://www.apple.com/safari/download/" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-safari.png" style="border: none;" alt="Télécharger Safari"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div style="width: 60px; float: left;"&amp;gt;&amp;lt;a href="http://www.opera.com/download" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-opera.png" style="border: none;" alt="Télécharger Opera"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+        &amp;lt;div style="width: 50px; float: left;"&amp;gt;&amp;lt;a href="http://windows.microsoft.com/fr-fr/internet-explorer/ie-10-worldwide-languages" target="_blank"&amp;gt;&amp;lt;img src="images/browsers/64-ie.png" style="border: none;" alt="Télécharger Internet explorer"/&amp;gt;&amp;lt;/a&amp;gt;&amp;lt;/div&amp;gt;
+      &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+  &amp;lt;/div&amp;gt;
+&amp;lt;![endif]--&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;</content>
+  </entry>
+</feed>

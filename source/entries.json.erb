@@ -1,0 +1,18 @@
+<% 
+entries = {}
+
+blog.articles.each_with_index do |article, index|
+  entry = {
+    :title      => article.title, 
+    :url        => article.url,
+    :date       => article.date,
+    :authors    => article.authors,
+    :categories => article.categories,
+    :tags       => article.tags,
+    :content    => article.body
+  }
+  entries[index] = entry
+end
+%>
+
+<%=entries.to_json %>
