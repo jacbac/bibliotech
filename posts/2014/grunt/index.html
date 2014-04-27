@@ -10,7 +10,7 @@
     <meta name="description" content="A static site for non-static documentation">
     <meta name="keywords" content="bibliotech, doc, documentation">
 
-    <title>Bibliotech | Apache config</title>
+    <title>Bibliotech | Grunt made easy</title>
 
     <link href="//fonts.googleapis.com/css?family=Source+Sans Pro:400,200italic,200,300,400italic,600italic,600,700" rel="stylesheet" type="text/css">
     <link href="/assets/css/normalize.css" media="screen" rel="stylesheet" type="text/css" />
@@ -57,18 +57,18 @@
       <div role="main-intro">
         <div class="row">
           <div class="col-md-4 post-banner">
-              <img alt="Apache config" height="202" src="/posts_uploads/2013/11/acm.jpg" />
+              <img alt="Grunt made easy" height="202" src="/posts_uploads/2013/11/seafile-banner.png" />
           </div>
           <div class="col-md-8 post-title">
-            <h1 class="entry-title">Apache config</h1>
+            <h1 class="entry-title">Grunt made easy</h1>
             <div class="row text-muted metas article-metas">
               <div class="col-md-12">
                 <span class="authors">&Eacute;crit par <a href="/authors/jacbac/">JacBac</a></span>
-                <span class="date-published">Publié le <time class="published" datetime="2013-11-25T13:52:00+01:00">25 November 2013</time></span>
+                <span class="date-published">Publié le <time class="published" datetime="2014-04-25T20:30:00+02:00">25 April 2014</time></span>
                 <span class="categories">Catégories :  
-                <a href="/categories/apache/">apache</a></span>
+                <a href="/categories/grunt/">grunt</a></span>
                 <span class="tags">Mots-clefs :  
-                <a href="/posts/tags/apache/">apache</a>, <a href="/posts/tags/debug/">debug</a>, <a href="/posts/tags/log/">log</a>, <a href="/posts/tags/server/">server</a></span>
+                <a href="/posts/tags/debian/">debian</a>, <a href="/posts/tags/seafile/">seafile</a></span>
               </div>
             </div>
           </div>
@@ -80,49 +80,16 @@
             <h4>Index</h4>
             <ul>
 <li>
-<a href="#toc_0">Apache Macro VHost</a>
-<ul>
-<li>
-<a href="#toc_1">Install</a>
-</li>
-</ul>
-</li>
-</ul>
+<a href="#toc_0">Install globally</a>
 </li>
 <li>
-<a href="#toc_2">Apache version 2.2</a>
-<ul>
-<li>
-<a href="#toc_3">Apache version 2.4</a>
-<ul>
-<li>
-<ul>
-<li>
-<a href="#toc_4">Usage:</a>
-</li>
-</ul>
+<a href="#toc_1">In a project</a>
 </li>
 <li>
-<a href="#toc_5">Apache uprade to 2.4</a>
+<a href="#toc_2">Help</a>
 </li>
 <li>
-<a href="#toc_6">Apache Logs</a>
-<ul>
-<li>
-<a href="#toc_7">Logs path</a>
-</li>
-<li>
-<a href="#toc_8">Log level</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="#toc_9">LogLevel: Control the number of messages logged to the error_log.</a>
-</li>
-<li>
-<a href="#toc_10">Possible values include: debug, info, notice, warn, error, crit, alert, emerg.</a>
+<a href="#toc_3">Packages</a>
 </li>
 </ul>
 
@@ -135,210 +102,42 @@
         <div class="col-md-8 post" role="main">
           <article class="entry">
             <div class="entry-content">
-              <h2 id="toc_0">Apache Macro VHost</h2>
-
-<p><a href="https://gist.github.com/ronanguilloux/8452588">Thanks to the revelator Ronan Guilloux</a>
-<a href="https://people.apache.org/~fabien/mod_macro/">Exemples and links</a>
-<a href="https://blog.natulte.net/posts/2008-04-29-apache-configuration-with-modmacro.html">Another example</a></p>
-
-<h3 id="toc_1">Install</h3>
-<pre class="highlight plaintext">sudo apt-get install libapache2-mod-macro
-sudo a2enmod macro
-sudo service apache2 restart
+              <h2 id="toc_0">Install globally</h2>
+<pre class="highlight shell">npm install grunt-cli -g
 </pre>
-<p>A thing you need to remember when making macros, is that the file defining your macros needs to be included in Apache&rsquo;s configuration files somewhere, or else you will not be able to use them. I would suggest you to make a file called <code>macro.conf</code> inside the folder <code>/etc/apache2/conf.d/</code>, since all files in that folder automatically get included by Apache.</p>
-
-<p>So copy &amp; paste this below inside a new <code>/etc/apache2/conf.d/macro.conf</code> file:</p>
-<pre class="highlight plaintext">&lt;Macro VHost $apacheversion $path $prepend $host $port&gt;
-    &lt;VirtualHost *:$port&gt;
-
-        Servername $host
-        ServerAlias $host.loc
-
-        DocumentRoot $path/$host/web
-
-        # dir definitions, old or new
-        &lt;Directory $path/$host/web&gt;
-            Use $apacheversion
-        &lt;/Directory&gt;
-
-        SetEnvIf Request_URI "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|txt|cur)$" dontlog
-        SetEnvIf Request_URI "^_" dontlog
-        SetEnvIf Request_URI "^/_" dontlog
-
-        # Logs
-        LogFormat "%V %h %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\" \"%{cookie}i\" test" combined_cookie_vhost
-        CustomLog ${APACHE_LOG_DIR}/access.$prepend_$host.com.log combined_cookie_vhost env=!dontlog
-        ErrorLog ${APACHE_LOG_DIR}/error.$prepend_$host.log
-        Use LogLevel $level
-
-        &lt;IfModule mod_expires.c&gt;
-            ExpiresActive on
-            ExpiresByType text/css                  "access plus 0 seconds"
-            ExpiresByType application/javascript    "access plus 0 seconds"
-        &lt;/IfModule&gt;
-
-        &lt;IfModule mod_headers.c&gt;
-            Header set X-UA-Compatible: "IE=edge,chrome=1"
-        &lt;/IfModule&gt;
-
-    &lt;/VirtualHost&gt;
-&lt;/Macro&gt;
-
-# Apache version 2.2
-&lt;Macro old&gt;
-        Options FollowSymLinks
-
-        # enable the .htaccess rewrites
-        AllowOverride All
-
-        # permissions
-        Order allow,deny
-        Allow from All
-&lt;/Macro&gt;
-
-# Apache version 2.4
-&lt;Macro new&gt;
-        Options FollowSymLinks
-
-        # enable the .htaccess rewrites
-        AllowOverride All
-
-        # permissions
-        Require all granted
-&lt;/Macro&gt;
-
-&lt;Macro LogLevel $level&gt;
-    # Possible values include: trace[8-1], debug, info, notice, warn, error, crit, alert, emerg.
-    LogLevel $level
-&lt;/Macro&gt;
+<h2 id="toc_1">In a project</h2>
+<pre class="highlight plaintext">touch package.json &amp;&amp; touch Gruntfile.js
 </pre>
-<h3 id="toc_2">Usage:</h3>
-<pre class="highlight plaintext">echo "Use VHost old warn" &gt; /etc/apache2/sites-available/myMacroBasedNewVHostName.conf
-sudo a2ensite myMacroBasedNewVHostName.conf
-sudo service apache2 reload
+<p>In <code>package.json</code>, add</p>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project-name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"license"</span><span class="p">:</span><span class="w"> </span><span class="s2">"MIT"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"main"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Gruntfile.js"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"scripts"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="s2">"test"</span><span class="p">:</span><span class="w"> </span><span class="s2">"echo \"Error: no test specified\" &amp;&amp; exit 1"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="s2">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"keyword"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></pre>
+<p>This is a basic template for your <code>package.json</code>.
+You can find other options on <a href="https://www.npmjs.org/doc/json.html"></a></p>
+<pre class="highlight shell">npm install grunt-contrib-copy grunt-processhtml grunt-uncss grunt-contrib-uglify grunt-contrib-imagemin grunt-contrib-watch --save-dev
 </pre>
-<p>Here&rsquo;s the options</p>
+<h2 id="toc_2">Help</h2>
 
-<table><thead>
-<tr>
-<th align="left">Variables</th>
-<th align="left">Use</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">$apacheversion</td>
-<td align="left">old (apache 2.2)</td>
-</tr>
-<tr>
-<td align="left">$path</td>
-<td align="left">the path to host</td>
-</tr>
-<tr>
-<td align="left">$prepend</td>
-<td align="left">add a prefix to logs name. ex. error.tool<em>your</em>site.log, error.v4<em>your</em>site.log</td>
-</tr>
-<tr>
-<td align="left">$host</td>
-<td align="left">the host name</td>
-</tr>
-<tr>
-<td align="left">$port</td>
-<td align="left">80, 8080, &hellip;</td>
-</tr>
-</tbody></table>
+<p>Lists available tasks : <code>grunt --help</code></p>
 
-<h2 id="toc_3">Apache uprade to 2.4</h2>
+<h2 id="toc_3">Packages</h2>
 
-<p>According to the new configuration file, the the enabled virtual host config files need to be under sites-enabled directory and these files mush have <code>.conf</code> extension. The simplest way is deleting all virtual host config files under sites-enabled, rename the existing config files under sites-available with extension .conf and re-enable with <code>a2ensite</code> command.</p>
-
-<p>All of the access control directives from the virtual host config and <code>.htaccess</code> files are needed to change to newer directives.</p>
-<pre class="highlight plaintext">Apache 2.2.*
-    Order deny,allow
-    Deny from all
-
-Apache 2.4.*
-    Require all denied
-
-Apache 2.2.*
-    Order allow,deny
-    Allow from all
-
-Apache 2.4.*
-    Require all granted
-
-Apache 2.2.*
-    Order Deny,Allow
-    Deny from all
-    Allow from example.org
-
-Apache 2.4.*
-    Require host example.org
-</pre>
-<h2 id="toc_4">Apache Logs</h2>
-
-<p><a href="https://www.digitalocean.com/community/articles/how-to-configure-logging-and-log-rotation-in-apache-on-an-ubuntu-vps"></a></p>
-
-<h3 id="toc_5">Logs path</h3>
-
-<p>To find exact apache log file location, you can use <code>grep</code> command:</p>
-<pre class="highlight plaintext">/usr/sbin/apachectl -V
-
-and
-
-grep ErrorLog /etc/apache2/apache2.conf
-</pre>
-<h3 id="toc_6">Log level</h3>
-<pre class="highlight plaintext">sudo vim /etc/apache2/apache2.conf
-</pre><pre class="highlight plaintext"># LogLevel: Control the number of messages logged to the error_log.
-# Possible values include: debug, info, notice, warn, error, crit, alert, emerg.
-LogLevel notice
-</pre>
-<p>debug &lt; info &lt; notice &lt; warn &lt; error &lt; crit &lt; alert &lt; emerg.</p>
-
-<table><thead>
-<tr>
-<th align="left">LogLevel</th>
-<th align="left">Expect</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">Trace[1-8]</td>
-<td align="left">Tracing information of various levels of verbosity that produces a large amount of information</td>
-</tr>
-<tr>
-<td align="left">Debug</td>
-<td align="left">Information that is diagnostically helpful to people more than just developers (IT, sysadmins, etc)</td>
-</tr>
-<tr>
-<td align="left">Info</td>
-<td align="left">Generally useful information to log (service start/stop, configuration assumptions, etc). Info I want to always have available but usually dont care about under normal circumstances. This is my out-of-the-box config level</td>
-</tr>
-<tr>
-<td align="left">Notice</td>
-<td align="left">Something normal, but worth noting has happened</td>
-</tr>
-<tr>
-<td align="left">Warn</td>
-<td align="left">Anything that can potentially cause application oddities, but for which I am automatically recoverring (such as switching from a primary to backup server, retrying an operation, missing secondary data, etc)</td>
-</tr>
-<tr>
-<td align="left">Error</td>
-<td align="left">Any error which is fatal to the operation but not the service or application (cant open a required file, missing data, etc). These errors will force user (administrator, or direct user) intervention.</td>
-</tr>
-<tr>
-<td align="left">Crit</td>
-<td align="left">Any error that is forcing a shutdown of the service or application to prevent data loss (or further data loss).</td>
-</tr>
-<tr>
-<td align="left">Alert</td>
-<td align="left">Severe situation where action is needed promptly</td>
-</tr>
-<tr>
-<td align="left">Emerg</td>
-<td align="left">Emergency situations where the system is in an unusable state.</td>
-</tr>
-</tbody></table>
+<p><a href="https://www.npmjs.org/package/grunt-contrib-imagemin">https://www.npmjs.org/package/grunt-contrib-imagemin</a>
+<a href="https://www.npmjs.org/package/grunt-autoprefixer">https://www.npmjs.org/package/grunt-autoprefixer</a> : npm install grunt-autoprefixer &ndash;save-dev
+<a href="https://www.npmjs.org/package/grunt-contrib-clean">https://www.npmjs.org/package/grunt-contrib-clean</a>
+<a href="https://www.npmjs.org/package/grunt-processhtml">https://www.npmjs.org/package/grunt-processhtml</a></p>
 
             </div>
           </article>

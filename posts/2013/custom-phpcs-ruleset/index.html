@@ -78,54 +78,7 @@
         <div class="col-md-4">
           <aside id="table-content" class="nav post-aside affix" data-spy="affix" role="complementary">
             <h4>Index</h4>
-            <ul>
-<li>
-<a href="#toc_0">Apache Macro VHost</a>
-<ul>
-<li>
-<a href="#toc_1">Install</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="#toc_2">Apache version 2.2</a>
-<ul>
-<li>
-<a href="#toc_3">Apache version 2.4</a>
-<ul>
-<li>
-<ul>
-<li>
-<a href="#toc_4">Usage:</a>
-</li>
-</ul>
-</li>
-<li>
-<a href="#toc_5">Apache uprade to 2.4</a>
-</li>
-<li>
-<a href="#toc_6">Apache Logs</a>
-<ul>
-<li>
-<a href="#toc_7">Logs path</a>
-</li>
-<li>
-<a href="#toc_8">Log level</a>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<a href="#toc_9">LogLevel: Control the number of messages logged to the error_log.</a>
-</li>
-<li>
-<a href="#toc_10">Possible values include: debug, info, notice, warn, error, crit, alert, emerg.</a>
-</li>
-</ul>
-
+            
             <h4>Sources et références</h4>
 <ul>
   <li>C'est peut-être le moment d'en ajouter :)</li>
@@ -135,210 +88,101 @@
         <div class="col-md-8 post" role="main">
           <article class="entry">
             <div class="entry-content">
-              <h2 id="toc_0">Apache Macro VHost</h2>
+              <p>PHPCS is a great tool to help you make sure the correct coding style is being followed within a project. The problem is that some times the build in standards don’t cover all your needs so it is necessary to build custom rules. I will walk through the process I followed to create my own coding standard based on the build-in Zend standard.</p>
 
-<p><a href="https://gist.github.com/ronanguilloux/8452588">Thanks to the revelator Ronan Guilloux</a>
-<a href="https://people.apache.org/~fabien/mod_macro/">Exemples and links</a>
-<a href="https://blog.natulte.net/posts/2008-04-29-apache-configuration-with-modmacro.html">Another example</a></p>
+<p>Creating your work environment</p>
 
-<h3 id="toc_1">Install</h3>
-<pre class="highlight plaintext">sudo apt-get install libapache2-mod-macro
-sudo a2enmod macro
-sudo service apache2 restart
+<p>In Ubuntu all PHPCS standards are stored in <code>/usr/share/php/PHP/CodeSniffer/Standards/</code>. There is a folder for each standard named after the standard name. I will call my standard SF1, so I will create a folder with that name.</p>
+<pre class="highlight plaintext">cd /usr/share/php/PHP/CodeSniffer/Standards/
+sudo mkdir Soonick
+sudo chmod 777 Soonick
 </pre>
-<p>A thing you need to remember when making macros, is that the file defining your macros needs to be included in Apache&rsquo;s configuration files somewhere, or else you will not be able to use them. I would suggest you to make a file called <code>macro.conf</code> inside the folder <code>/etc/apache2/conf.d/</code>, since all files in that folder automatically get included by Apache.</p>
+<p>Now we can start working.</p>
 
-<p>So copy &amp; paste this below inside a new <code>/etc/apache2/conf.d/macro.conf</code> file:</p>
-<pre class="highlight plaintext">&lt;Macro VHost $apacheversion $path $prepend $host $port&gt;
-    &lt;VirtualHost *:$port&gt;
+<p>Extending a standard</p>
 
-        Servername $host
-        ServerAlias $host.loc
+<p>Create a <code>ruleset.xml</code> file inside your standard folder. I want my standard to extend the Zend standard so to get started I will do just that.</p>
+<pre class="highlight xml"><span class="cp">&lt;?xml version="1.0"?&gt;</span>
+<span class="nt">&lt;ruleset</span> <span class="na">name=</span><span class="s">"SF1"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;description&gt;</span>Coding standard based on PSR1 with some additions from PSR2 and indent rules of 2 spaces<span class="nt">&lt;/description&gt;</span>
 
-        DocumentRoot $path/$host/web
+     <span class="c">&lt;!-- Include the whole PSR1 standard --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"PSR1"</span><span class="nt">/&gt;</span>
 
-        # dir definitions, old or new
-        &lt;Directory $path/$host/web&gt;
-            Use $apacheversion
-        &lt;/Directory&gt;
+    <span class="c">&lt;!-- All PHP files MUST use the Unix LF (linefeed) line ending. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Generic.Files.LineEndings"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;properties&gt;</span>
+            <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"eolChar"</span> <span class="na">value=</span><span class="s">"\n"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/properties&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
 
-        SetEnvIf Request_URI "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf|txt|cur)$" dontlog
-        SetEnvIf Request_URI "^_" dontlog
-        SetEnvIf Request_URI "^/_" dontlog
+    <span class="c">&lt;!-- Code MUST use an indent of 2 spaces, and MUST NOT use tabs for indenting. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Generic.WhiteSpace.ScopeIndent"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;properties&gt;</span>
+            <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"indent"</span> <span class="na">value=</span><span class="s">"2"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/properties&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Generic.WhiteSpace.DisallowTabIndent"</span><span class="nt">/&gt;</span>
 
-        # Logs
-        LogFormat "%V %h %l %u %t \"%r\" %&gt;s %b \"%{Referer}i\" \"%{User-Agent}i\" \"%{cookie}i\" test" combined_cookie_vhost
-        CustomLog ${APACHE_LOG_DIR}/access.$prepend_$host.com.log combined_cookie_vhost env=!dontlog
-        ErrorLog ${APACHE_LOG_DIR}/error.$prepend_$host.log
-        Use LogLevel $level
+    <span class="c">&lt;!-- All PHP files MUST end with a single blank line. --&gt;</span>
+    <span class="c">&lt;!-- checked in Files/EndFileNewlineSniff --&gt;</span>
 
-        &lt;IfModule mod_expires.c&gt;
-            ExpiresActive on
-            ExpiresByType text/css                  "access plus 0 seconds"
-            ExpiresByType application/javascript    "access plus 0 seconds"
-        &lt;/IfModule&gt;
+    <span class="c">&lt;!-- The closing ?&gt; tag MUST be omitted from files containing only PHP. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Zend.Files.ClosingTag"</span><span class="nt">/&gt;</span>
 
-        &lt;IfModule mod_headers.c&gt;
-            Header set X-UA-Compatible: "IE=edge,chrome=1"
-        &lt;/IfModule&gt;
+    <span class="c">&lt;!-- There MUST NOT be trailing whitespace at the end of non-blank lines. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.WhiteSpace.SuperfluousWhitespace"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;properties&gt;</span>
+            <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"ignoreBlankLines"</span> <span class="na">value=</span><span class="s">"true"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/properties&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.WhiteSpace.SuperfluousWhitespace.StartFile"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;severity&gt;</span>0<span class="nt">&lt;/severity&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.WhiteSpace.SuperfluousWhitespace.EndFile"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;severity&gt;</span>0<span class="nt">&lt;/severity&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.WhiteSpace.SuperfluousWhitespace.EmptyLines"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;severity&gt;</span>0<span class="nt">&lt;/severity&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
 
-    &lt;/VirtualHost&gt;
-&lt;/Macro&gt;
+    <span class="c">&lt;!-- There MUST NOT be more than one statement per line. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Generic.Formatting.DisallowMultipleStatements"</span><span class="nt">/&gt;</span>
 
-# Apache version 2.2
-&lt;Macro old&gt;
-        Options FollowSymLinks
+    <span class="c">&lt;!-- 2.5 Keywords and True/False/Null --&gt;</span>
 
-        # enable the .htaccess rewrites
-        AllowOverride All
+    <span class="c">&lt;!-- PHP keywords MUST be in lower case. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Generic.PHP.LowerCaseKeyword"</span><span class="nt">/&gt;</span>
 
-        # permissions
-        Order allow,deny
-        Allow from All
-&lt;/Macro&gt;
+    <span class="c">&lt;!-- The PHP constants true, false, and null MUST be in lower case. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Generic.PHP.LowerCaseConstant"</span><span class="nt">/&gt;</span>
 
-# Apache version 2.4
-&lt;Macro new&gt;
-        Options FollowSymLinks
+    <span class="c">&lt;!-- 4.3 Methods --&gt;</span>
 
-        # enable the .htaccess rewrites
-        AllowOverride All
+    <span class="c">&lt;!-- Visibility MUST be declared on all methods. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.Scope.MethodScope"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.WhiteSpace.ScopeKeywordSpacing"</span><span class="nt">/&gt;</span>
 
-        # permissions
-        Require all granted
-&lt;/Macro&gt;
+    <span class="c">&lt;!-- 4.4 Method Arguments --&gt;</span>
 
-&lt;Macro LogLevel $level&gt;
-    # Possible values include: trace[8-1], debug, info, notice, warn, error, crit, alert, emerg.
-    LogLevel $level
-&lt;/Macro&gt;
+    <span class="c">&lt;!-- In the argument list, there MUST NOT be a space before each comma, and there MUST be one space after each comma. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.Functions.FunctionDeclarationArgumentSpacing"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;properties&gt;</span>
+            <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"equalsSpacing"</span> <span class="na">value=</span><span class="s">"1"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;/properties&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterHint"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;severity&gt;</span>0<span class="nt">&lt;/severity&gt;</span>
+    <span class="nt">&lt;/rule&gt;</span>
+
+    <span class="c">&lt;!-- Method arguments with default values MUST go at the end of the argument list. --&gt;</span>
+    <span class="nt">&lt;rule</span> <span class="na">ref=</span><span class="s">"PEAR.Functions.ValidDefaultValue"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/ruleset&gt;</span>
 </pre>
-<h3 id="toc_2">Usage:</h3>
-<pre class="highlight plaintext">echo "Use VHost old warn" &gt; /etc/apache2/sites-available/myMacroBasedNewVHostName.conf
-sudo a2ensite myMacroBasedNewVHostName.conf
-sudo service apache2 reload
-</pre>
-<p>Here&rsquo;s the options</p>
+<p>Pour les projets SF1, PFS :</p>
 
-<table><thead>
-<tr>
-<th align="left">Variables</th>
-<th align="left">Use</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">$apacheversion</td>
-<td align="left">old (apache 2.2)</td>
-</tr>
-<tr>
-<td align="left">$path</td>
-<td align="left">the path to host</td>
-</tr>
-<tr>
-<td align="left">$prepend</td>
-<td align="left">add a prefix to logs name. ex. error.tool<em>your</em>site.log, error.v4<em>your</em>site.log</td>
-</tr>
-<tr>
-<td align="left">$host</td>
-<td align="left">the host name</td>
-</tr>
-<tr>
-<td align="left">$port</td>
-<td align="left">80, 8080, &hellip;</td>
-</tr>
-</tbody></table>
-
-<h2 id="toc_3">Apache uprade to 2.4</h2>
-
-<p>According to the new configuration file, the the enabled virtual host config files need to be under sites-enabled directory and these files mush have <code>.conf</code> extension. The simplest way is deleting all virtual host config files under sites-enabled, rename the existing config files under sites-available with extension .conf and re-enable with <code>a2ensite</code> command.</p>
-
-<p>All of the access control directives from the virtual host config and <code>.htaccess</code> files are needed to change to newer directives.</p>
-<pre class="highlight plaintext">Apache 2.2.*
-    Order deny,allow
-    Deny from all
-
-Apache 2.4.*
-    Require all denied
-
-Apache 2.2.*
-    Order allow,deny
-    Allow from all
-
-Apache 2.4.*
-    Require all granted
-
-Apache 2.2.*
-    Order Deny,Allow
-    Deny from all
-    Allow from example.org
-
-Apache 2.4.*
-    Require host example.org
-</pre>
-<h2 id="toc_4">Apache Logs</h2>
-
-<p><a href="https://www.digitalocean.com/community/articles/how-to-configure-logging-and-log-rotation-in-apache-on-an-ubuntu-vps"></a></p>
-
-<h3 id="toc_5">Logs path</h3>
-
-<p>To find exact apache log file location, you can use <code>grep</code> command:</p>
-<pre class="highlight plaintext">/usr/sbin/apachectl -V
-
-and
-
-grep ErrorLog /etc/apache2/apache2.conf
-</pre>
-<h3 id="toc_6">Log level</h3>
-<pre class="highlight plaintext">sudo vim /etc/apache2/apache2.conf
-</pre><pre class="highlight plaintext"># LogLevel: Control the number of messages logged to the error_log.
-# Possible values include: debug, info, notice, warn, error, crit, alert, emerg.
-LogLevel notice
-</pre>
-<p>debug &lt; info &lt; notice &lt; warn &lt; error &lt; crit &lt; alert &lt; emerg.</p>
-
-<table><thead>
-<tr>
-<th align="left">LogLevel</th>
-<th align="left">Expect</th>
-</tr>
-</thead><tbody>
-<tr>
-<td align="left">Trace[1-8]</td>
-<td align="left">Tracing information of various levels of verbosity that produces a large amount of information</td>
-</tr>
-<tr>
-<td align="left">Debug</td>
-<td align="left">Information that is diagnostically helpful to people more than just developers (IT, sysadmins, etc)</td>
-</tr>
-<tr>
-<td align="left">Info</td>
-<td align="left">Generally useful information to log (service start/stop, configuration assumptions, etc). Info I want to always have available but usually dont care about under normal circumstances. This is my out-of-the-box config level</td>
-</tr>
-<tr>
-<td align="left">Notice</td>
-<td align="left">Something normal, but worth noting has happened</td>
-</tr>
-<tr>
-<td align="left">Warn</td>
-<td align="left">Anything that can potentially cause application oddities, but for which I am automatically recoverring (such as switching from a primary to backup server, retrying an operation, missing secondary data, etc)</td>
-</tr>
-<tr>
-<td align="left">Error</td>
-<td align="left">Any error which is fatal to the operation but not the service or application (cant open a required file, missing data, etc). These errors will force user (administrator, or direct user) intervention.</td>
-</tr>
-<tr>
-<td align="left">Crit</td>
-<td align="left">Any error that is forcing a shutdown of the service or application to prevent data loss (or further data loss).</td>
-</tr>
-<tr>
-<td align="left">Alert</td>
-<td align="left">Severe situation where action is needed promptly</td>
-</tr>
-<tr>
-<td align="left">Emerg</td>
-<td align="left">Emergency situations where the system is in an unusable state.</td>
-</tr>
-</tbody></table>
+<p>Indentation de 2 espaces
+Bracket à la ligne tout le temps</p>
 
             </div>
           </article>

@@ -1,6 +1,40 @@
 <div class="search-results"></div>
 
   <article class="article-inlist">
+    <h1><a href="/posts/2014/grunt/">Grunt made easy</a></h1>
+    <div class="row metas text-muted">
+  <div class="col-md-6">
+    <span class="authors">Ecrit par <a href="/authors/jacbac/">JacBac</a></span>
+    <span class="date-published">Publié le <time class="published" datetime="2014-04-25T20:30:00+02:00">25 Avril 2014</time></span>
+  </div>
+  <div class="col-md-6">
+    <span class="categories">Catégories :  
+    <a href="/categories/grunt/">grunt</a></span>
+    <span class="tags">Tags :  
+    <a href="/posts/tags/debian/">debian</a>, <a href="/posts/tags/seafile/">seafile</a></span>
+  </div>
+</div>
+
+    <hr />
+
+    <h2 id="toc_0">Install globally</h2>
+<pre class="highlight shell">npm install grunt-cli -g
+</pre>
+<h2 id="toc_1">In a project</h2>
+<pre class="highlight plaintext">touch package.json &amp;&amp; touch Gruntfile.js
+</pre>
+<p>In <code>package.json</code>, add</p>
+<pre class="highlight json"><span class="p">{</span><span class="w">
+    </span><span class="s2">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"project-name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Project description"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Your name"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"license...</span></pre>
+    <a class="read-more pull-right" href="/posts/2014/grunt/">Lire la suite...</a>
+  </article>
+
+  <hr class="inlist-sep" />
+  <article class="article-inlist">
     <h1><a href="/posts/2014/regexp/">Regexp</a></h1>
     <div class="row metas text-muted">
   <div class="col-md-6">
@@ -148,37 +182,6 @@ This page describes how to resolve the following PHP warning: PHP Warning: Modul
 
   <hr class="inlist-sep" />
   <article class="article-inlist">
-    <h1><a href="/posts/2013/message-obsolescence-des-navigateurs/">Message d'obsolescence des navigateurs</a></h1>
-    <div class="row metas text-muted">
-  <div class="col-md-6">
-    <span class="authors">Ecrit par <a href="/authors/jacbac/">JacBac</a></span>
-    <span class="date-published">Publié le <time class="published" datetime="2013-11-29T12:00:00+01:00">29 Novembre 2013</time></span>
-  </div>
-  <div class="col-md-6">
-    <span class="categories">Catégories :  
-    <a href="/categories/frontend/">frontend</a>, <a href="/categories/ie/">ie</a></span>
-    <span class="tags">Tags :  
-    <a href="/posts/tags/ie8/">IE8</a>, <a href="/posts/tags/navigateur/">navigateur</a>, <a href="/posts/tags/ux/">ux</a></span>
-  </div>
-</div>
-
-    <hr />
-
-    <h2 id="toc_0">Cibler les navigateurs</h2>
-
-<h3 id="toc_1">Avec des commentaires conditionnels</h3>
-<pre class="highlight html"><span class="c">&lt;!--[if gte IE 6]&gt; pour IE 6.0 et version plus récentes &lt;![endif]--&gt;</span>
-
-<span class="c">&lt;!--[if IE 5.0]&gt; pour IE 5.0 &lt;![endif]--&gt;</span>
-
-<span class="c">&lt;!--[if IE 5.5000]&gt; pour IE 5.5 &lt;![endif]--&gt;</span>
-
-<span class="c">&lt;!--[if IE 6]&gt; pour IE 6.0 &lt;...</span></pre>
-    <a class="read-more pull-right" href="/posts/2013/message-obsolescence-des-navigateurs/">Lire la suite...</a>
-  </article>
-
-  <hr class="inlist-sep" />
-  <article class="article-inlist">
     <h1><a href="/posts/2013/dot-file-bash-aliases/">Personnalisation des alias terminal avec .bash_aliases</a></h1>
     <div class="row metas text-muted">
   <div class="col-md-6">
@@ -206,6 +209,37 @@ alias -- -="cd -"
 
 # ---------------...</pre>
     <a class="read-more pull-right" href="/posts/2013/dot-file-bash-aliases/">Lire la suite...</a>
+  </article>
+
+  <hr class="inlist-sep" />
+  <article class="article-inlist">
+    <h1><a href="/posts/2013/message-obsolescence-des-navigateurs/">Message d'obsolescence des navigateurs</a></h1>
+    <div class="row metas text-muted">
+  <div class="col-md-6">
+    <span class="authors">Ecrit par <a href="/authors/jacbac/">JacBac</a></span>
+    <span class="date-published">Publié le <time class="published" datetime="2013-11-29T12:00:00+01:00">29 Novembre 2013</time></span>
+  </div>
+  <div class="col-md-6">
+    <span class="categories">Catégories :  
+    <a href="/categories/frontend/">frontend</a>, <a href="/categories/ie/">ie</a></span>
+    <span class="tags">Tags :  
+    <a href="/posts/tags/ie8/">IE8</a>, <a href="/posts/tags/navigateur/">navigateur</a>, <a href="/posts/tags/ux/">ux</a></span>
+  </div>
+</div>
+
+    <hr />
+
+    <h2 id="toc_0">Cibler les navigateurs</h2>
+
+<h3 id="toc_1">Avec des commentaires conditionnels</h3>
+<pre class="highlight html"><span class="c">&lt;!--[if gte IE 6]&gt; pour IE 6.0 et version plus récentes &lt;![endif]--&gt;</span>
+
+<span class="c">&lt;!--[if IE 5.0]&gt; pour IE 5.0 &lt;![endif]--&gt;</span>
+
+<span class="c">&lt;!--[if IE 5.5000]&gt; pour IE 5.5 &lt;![endif]--&gt;</span>
+
+<span class="c">&lt;!--[if IE 6]&gt; pour IE 6.0 &lt;...</span></pre>
+    <a class="read-more pull-right" href="/posts/2013/message-obsolescence-des-navigateurs/">Lire la suite...</a>
   </article>
 
   <hr class="inlist-sep" />
@@ -392,7 +426,7 @@ git init
 
   <hr class="inlist-sep" />
   <article class="article-inlist">
-    <h1><a href="/posts/2013/mongodb/">MongoDB Help</a></h1>
+    <h1><a href="/posts/2013/custom-phpcs-ruleset/">Apache config</a></h1>
     <div class="row metas text-muted">
   <div class="col-md-6">
     <span class="authors">Ecrit par <a href="/authors/jacbac/">JacBac</a></span>
@@ -400,22 +434,16 @@ git init
   </div>
   <div class="col-md-6">
     <span class="categories">Catégories :  
-    <a href="/categories/mongodb/">mongoDB</a></span>
+    <a href="/categories/apache/">apache</a></span>
     <span class="tags">Tags :  
-    <a href="/posts/tags/dump/">dump</a>, <a href="/posts/tags/export/">export</a>, <a href="/posts/tags/import/">import</a>, <a href="/posts/tags/mongodb/">mongoDB</a>, <a href="/posts/tags/service/">service</a></span>
+    <a href="/posts/tags/apache/">apache</a>, <a href="/posts/tags/debug/">debug</a>, <a href="/posts/tags/log/">log</a>, <a href="/posts/tags/server/">server</a></span>
   </div>
 </div>
 
     <hr />
 
-    <h2 id="toc_0">Install MongoDB</h2>
-
-<p>See <code>posts/post-install-distrib-ubuntu</code> or <code>posts/post-install-distrib-debian</code></p>
-
-<h2 id="toc_1">Run MongoDB</h2>
-
-<p>The MongoDB instance stores its data files in the <code>/var/lib/mongo</code> and its log files in <code>/var/log/mongo</code>, and run using the mongod user account. If...</p>
-    <a class="read-more pull-right" href="/posts/2013/mongodb/">Lire la suite...</a>
+    <p>PHPCS is a great tool to help you make sure the correct coding style is being followed within a project. The problem is that some times the build in standards don’t cover all your needs so it is necessary to build custom rules. I will walk through...</p>
+    <a class="read-more pull-right" href="/posts/2013/custom-phpcs-ruleset/">Lire la suite...</a>
   </article>
 
   <hr class="inlist-sep" />
@@ -447,37 +475,6 @@ git init
 <h2 id="toc_1">Essentials build tools</h2>
 <pre class="highlight plaintext">sudo apt-get install build-essential make...</pre>
     <a class="read-more pull-right" href="/posts/2013/post-install-linux-distrib/">Lire la suite...</a>
-  </article>
-
-  <hr class="inlist-sep" />
-  <article class="article-inlist">
-    <h1><a href="/posts/2013/git-stash/">Git stash</a></h1>
-    <div class="row metas text-muted">
-  <div class="col-md-6">
-    <span class="authors">Ecrit par <a href="/authors/jacbac/">JacBac</a></span>
-    <span class="date-published">Publié le <time class="published" datetime="2013-11-25T13:52:00+01:00">25 Novembre 2013</time></span>
-  </div>
-  <div class="col-md-6">
-    <span class="categories">Catégories :  
-    <a href="/categories/git/">git</a></span>
-    <span class="tags">Tags :  
-    <a href="/posts/tags/git/">git</a>, <a href="/posts/tags/stash/">stash</a></span>
-  </div>
-</div>
-
-    <hr />
-
-    <p><a href="http://sametmax.com/soyez-relax-faites-vous-un-petit-git-stash/">http://sametmax.com/soyez-relax-faites-vous-un-petit-git-stash/</a>
-<a href="http://front-back.com/2012/05/vas-y-git-mets-du-stash">http://front-back.com/2012/05/vas-y-git-mets-du-stash</a></p>
-
-<p>Lister les stash en cours</p>
-<pre class="highlight plaintext">git stash list
-</pre>
-<p>Enregistrer le travail en cours dans un stash</p>
-<pre class="highlight plaintext">git stash
-</pre>
-<p>Enregister le travail en cours...</p>
-    <a class="read-more pull-right" href="/posts/2013/git-stash/">Lire la suite...</a>
   </article>
 
   <hr class="inlist-sep" />
@@ -533,6 +530,65 @@ sudo service apache2 restart
 
     <p>If you are trying to ignore changes to a file that’s already tracked in the repository (e.g. a dev.properties file that you would need to change for your local environment but you would never want to check in these changes) than what you want to do...</p>
     <a class="read-more pull-right" href="/posts/2013/git-ignore/">Lire la suite...</a>
+  </article>
+
+  <hr class="inlist-sep" />
+  <article class="article-inlist">
+    <h1><a href="/posts/2013/mongodb/">MongoDB Help</a></h1>
+    <div class="row metas text-muted">
+  <div class="col-md-6">
+    <span class="authors">Ecrit par <a href="/authors/jacbac/">JacBac</a></span>
+    <span class="date-published">Publié le <time class="published" datetime="2013-11-25T13:52:00+01:00">25 Novembre 2013</time></span>
+  </div>
+  <div class="col-md-6">
+    <span class="categories">Catégories :  
+    <a href="/categories/mongodb/">mongoDB</a></span>
+    <span class="tags">Tags :  
+    <a href="/posts/tags/dump/">dump</a>, <a href="/posts/tags/export/">export</a>, <a href="/posts/tags/import/">import</a>, <a href="/posts/tags/mongodb/">mongoDB</a>, <a href="/posts/tags/service/">service</a></span>
+  </div>
+</div>
+
+    <hr />
+
+    <h2 id="toc_0">Install MongoDB</h2>
+
+<p>See <code>posts/post-install-distrib-ubuntu</code> or <code>posts/post-install-distrib-debian</code></p>
+
+<h2 id="toc_1">Run MongoDB</h2>
+
+<p>The MongoDB instance stores its data files in the <code>/var/lib/mongo</code> and its log files in <code>/var/log/mongo</code>, and run using the mongod user account. If...</p>
+    <a class="read-more pull-right" href="/posts/2013/mongodb/">Lire la suite...</a>
+  </article>
+
+  <hr class="inlist-sep" />
+  <article class="article-inlist">
+    <h1><a href="/posts/2013/git-stash/">Git stash</a></h1>
+    <div class="row metas text-muted">
+  <div class="col-md-6">
+    <span class="authors">Ecrit par <a href="/authors/jacbac/">JacBac</a></span>
+    <span class="date-published">Publié le <time class="published" datetime="2013-11-25T13:52:00+01:00">25 Novembre 2013</time></span>
+  </div>
+  <div class="col-md-6">
+    <span class="categories">Catégories :  
+    <a href="/categories/git/">git</a></span>
+    <span class="tags">Tags :  
+    <a href="/posts/tags/git/">git</a>, <a href="/posts/tags/stash/">stash</a></span>
+  </div>
+</div>
+
+    <hr />
+
+    <p><a href="http://sametmax.com/soyez-relax-faites-vous-un-petit-git-stash/">http://sametmax.com/soyez-relax-faites-vous-un-petit-git-stash/</a>
+<a href="http://front-back.com/2012/05/vas-y-git-mets-du-stash">http://front-back.com/2012/05/vas-y-git-mets-du-stash</a></p>
+
+<p>Lister les stash en cours</p>
+<pre class="highlight plaintext">git stash list
+</pre>
+<p>Enregistrer le travail en cours dans un stash</p>
+<pre class="highlight plaintext">git stash
+</pre>
+<p>Enregister le travail en cours...</p>
+    <a class="read-more pull-right" href="/posts/2013/git-stash/">Lire la suite...</a>
   </article>
 
   <hr class="inlist-sep" />
