@@ -3,11 +3,13 @@ Bibliotech
 
 A static site for non-static documentation !
 
+[Demo](http://jacbac.github.io/bibliotech/)
+
 ## Disclaimer :
 
-This is a attempt to try a "markdown blogging" system (Middleman) which derivated in building a "partial" documentation repository for myself and/or a small team
+This is a attempt to try a "markdown blogging" system (Middleman) which derivated in building a "partial" documentation repository for myself and/or a small dev team.
 
-In some way it's a fork of Middleman. In a minor way
+In some way it's a fork of Middleman. In a minor way.
 
 The .md files located in `source/posts/` are at this point simple compilations of facts I found on internet. Just take a look or forget about it, it's not the point here.
 
@@ -16,7 +18,7 @@ The .md files located in `source/posts/` are at this point simple compilations o
 
 ## Usage
 
-Use it as a blogging system
+Use it as a blogging system.
 
 Affichage sous format blog (et archivage) de tutoriaux, astuces, bonnes pratiques et autres ressources à propos des développements informatiques.
 
@@ -25,6 +27,7 @@ Affichage sous format blog (et archivage) de tutoriaux, astuces, bonnes pratique
 Installation process complete on 2014-04-16, Ubuntu 13.10 and Debian 7.2, localhost.
 
 I have NOT deployed this project in a true prod environment (remote server), so try at your risk...
+You can watch out a [demo on github.io](http://jacbac.github.io/bibliotech/).
 
 ### Required
 
