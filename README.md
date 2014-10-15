@@ -185,7 +185,8 @@ Lorem ipsum inc.
 Only `title`, `date` and `layouts` metas are mandatory, others are optionnals.
 
 |Meta    |Usage                                        |
-| title  | eq. to html <h1>, use in view list and post |
+|--------|---------------------------------------------|
+| title  | eq. to html tag h1 use in view list and post|
 | date   | date use in view list and post              |
 | layouts| specific template to use (see layouts dir)  |
 
